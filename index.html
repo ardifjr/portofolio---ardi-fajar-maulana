@@ -31,6 +31,30 @@
             @media (max-width: 991.98px){
                 body{padding-top:56px}
             }
+            /* Loading animation for Spline */
+            .spline-loading {
+                position: relative;
+            }
+            .spline-loading::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 50px;
+                height: 50px;
+                margin: -25px 0 0 -25px;
+                border: 4px solid rgba(255, 255, 255, 0.1);
+                border-top-color: #fff;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                z-index: 1;
+            }
+            .spline-loaded::before {
+                display: none;
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
         </style>
     </head>
     <body class="d-flex flex-column h-100" style="background-color: #0a0a0a;">
@@ -52,9 +76,9 @@
                 </div>
             </nav>
             <!-- Header-->
-            <header class="py-5 position-relative" id="home" style="min-height: clamp(500px, 100vh, 800px); display: flex; align-items: center; overflow: hidden;">
+            <header class="py-5 position-relative" id="home" style="min-height: clamp(500px, 100vh, 800px); display: flex; align-items: center; overflow: hidden; background-color: #000000;">
                 <!-- Spline Background -->
-                <div style="position: absolute; top: -90px; right: -500px; width: 120%; height: 120%; z-index: 0; overflow: visible; pointer-events: none;" class="d-none d-lg-block">
+                <div style="position: absolute; top: -90px; right: -500px; width: 120%; height: 120%; z-index: 0; overflow: visible; pointer-events: none;" class="d-none d-lg-block spline-loading" id="splineContainer">
                     <spline-viewer url="https://prod.spline.design/LAVimTL6zOD6h51e/scene.splinecode" style="width: 100%; height: 100%;"></spline-viewer>
                 </div>
                 <!-- Content -->
@@ -735,6 +759,27 @@
         <script>
             // Set current year dynamically
             document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+       <script>
+            // Handle Spline loading - hide loader when ready
+            document.addEventListener('DOMContentLoaded', function() {
+                const splineViewer = document.querySelector('spline-viewer');
+                const splineContainer = document.getElementById('splineContainer');
+                
+                if (splineViewer && splineContainer) {
+                    // Listen for spline load event
+                    splineViewer.addEventListener('load', function() {
+                        splineContainer.classList.add('spline-loaded');
+                        splineContainer.classList.remove('spline-loading');
+                    });
+                    
+                    // Fallback: force hide loading after 5 seconds
+                    setTimeout(function() {
+                        splineContainer.classList.add('spline-loaded');
+                        splineContainer.classList.remove('spline-loading');
+                    }, 5000);
+                }
+            });
         </script>
     </body>
 </html>
