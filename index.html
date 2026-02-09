@@ -78,9 +78,9 @@
             <!-- Header-->
             <header class="py-5 position-relative" id="home" style="min-height: clamp(500px, 100vh, 800px); display: flex; align-items: center; overflow: hidden; background-color: #000000;">
                 <!-- Spline Background -->
-                <!-- <div style="position: absolute; top: -90px; right: -500px; width: 120%; height: 120%; z-index: 0; overflow: visible; pointer-events: none;" class="d-none d-lg-block spline-loading" id="splineContainer">
+                <div style="position: absolute; top: -90px; right: -500px; width: 120%; height: 120%; z-index: 0; overflow: visible; pointer-events: none;" class="d-none d-lg-block spline-loading" id="splineContainer">
                     <spline-viewer url="https://prod.spline.design/LAVimTL6zOD6h51e/scene.splinecode" style="width: 100%; height: 100%;"></spline-viewer>
-                </div> -->
+                </div>
                 <!-- Content -->
                 <div class="container px-5 pb-5 position-relative" style="z-index: 1;">
                     <div class="row gx-5 align-items-center">
@@ -584,7 +584,8 @@
                 <style>
                     .cert-card{background:#0d0d0d;border:0;color:#eef2f5}
                     .cert-card .card-body{position:relative;padding:1.25rem}
-                    .cert-img{max-height:140px;object-fit:contain;background:#fff;padding:8px;border-radius:4px}
+                    .cert-img{max-height:140px;object-fit:contain;background:#fff;padding:8px;border-radius:4px;cursor:pointer;transition:transform 0.2s}
+                    .cert-img:hover{transform:scale(1.05)}
                     .cert-title{color:#ffffff;font-weight:700;margin-top:0.25rem}
                     .cert-issuer{color:#9aa0a6}
                     .cert-category{color:#4ea1ff;text-decoration:none}
@@ -601,7 +602,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+1" class="cert-img mb-3" alt="Fundamentals of Deep Learning" />
+                                        <img src="assets/data academy.jpg" class="cert-img mb-3" alt="Fundamentals of Deep Learning" />
                                     </div>
                                     <h5 class="cert-title">Pelatihan Merancang Dan Membuat Basis Data Menggunakan SQL Untuk Analisis Database</h5>
                                     <div class="cert-issuer small">Issued by Data Academy</div>
@@ -616,7 +617,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+2" class="cert-img mb-3" alt="Web Development" />
+                                        <img src="assets/ids.jpg" class="cert-img mb-3" alt="Web Development" />
                                     </div>
                                     <h5 class="cert-title">Pelatihan membangun Website dengan Wordpress & HTML bagi Pengembang Internet</h5>
                                     <div class="cert-issuer small">Issued by Internasional Design School</div>
@@ -631,7 +632,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+3" class="cert-img mb-3" alt="Python Basics" />
+                                        <img src="assets/revou.jpg" class="cert-img mb-3" alt="Python Basics" />
                                     </div>
                                     <h5 class="cert-title">Mini Course Data Analytics</h5>
                                     <div class="cert-issuer small">Issued by RevoU</div>
@@ -646,7 +647,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+4" class="cert-img mb-3" alt="Data Analysis" />
+                                        <img src="assets/MyEduSolvex.jpg" class="cert-img mb-3" alt="Data Analysis" />
                                     </div>
                                     <h5 class="cert-title">Pelatihan membangun aplikasi berbasis android menggunakan kotlin bagi software developer</h5>
                                     <div class="cert-issuer small">Issued by MyEduSolvex</div>
@@ -661,7 +662,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+5" class="cert-img mb-3" alt="Computer Vision" />
+                                        <img src="assets/huawei.png" class="cert-img mb-3" alt="Computer Vision" />
                                     </div>
                                     <h5 class="cert-title">Course Python Programming Basics</h5>
                                     <div class="cert-issuer small">Issued by Huawei Academy</div>
@@ -676,7 +677,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+6" class="cert-img mb-3" alt="IoT" />
+                                        <img src="assets/oracle foundations.jpg" class="cert-img mb-3" alt="IoT" />
                                     </div>
                                     <h5 class="cert-title">Oracle Foundations</h5>
                                     <div class="cert-issuer small">Issued by Oracle Academy</div>
@@ -691,7 +692,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+7" class="cert-img mb-3" alt="Laravel" />
+                                        <img src="assets/oracle fundamentals.jpg" class="cert-img mb-3" alt="Laravel" />
                                     </div>
                                     <h5 class="cert-title">Oracle Fundamentals</h5>
                                     <div class="cert-issuer small">Issued by Oracle Academy</div>
@@ -706,7 +707,7 @@
                             <div class="card cert-card shadow rounded-4 h-100">
                                 <div class="card-body d-flex flex-column">
                                     <div class="text-center">
-                                        <img src="https://dummyimage.com/480x320/ffffff/000000&text=Certificate+8" class="cert-img mb-3" alt="API" />
+                                        <img src="assets/dicoding.jpg" class="cert-img mb-3" alt="API" />
                                     </div>
                                     <h5 class="cert-title">Belajar Dasar Pemrograman Web</h5>
                                     <div class="cert-issuer small">Issued by Dicoding</div>
@@ -777,6 +778,45 @@
                     
                     // Fallback: force hide after 3 seconds
                     setTimeout(hideLoading, 3000);
+                }
+            });
+        </script>
+        <!-- Modal Pop-up untuk Certificate -->
+        <div id="certModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
+            <span id="closeCertModal" style="position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
+            <img id="certModalImg" style="margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 50px;">
+        </div>
+        <script>
+            // Certificate Modal Pop-up
+            const certModal = document.getElementById('certModal');
+            const certModalImg = document.getElementById('certModalImg');
+            const closeCertModal = document.getElementById('closeCertModal');
+            const certImages = document.querySelectorAll('.cert-img');
+
+            // Add click event to all certificate images
+            certImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    certModal.style.display = 'block';
+                    certModalImg.src = this.src;
+                });
+            });
+
+            // Close modal when X is clicked
+            closeCertModal.addEventListener('click', function() {
+                certModal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside the image
+            certModal.addEventListener('click', function(e) {
+                if (e.target === certModal) {
+                    certModal.style.display = 'none';
+                }
+            });
+
+            // Close modal with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && certModal.style.display === 'block') {
+                    certModal.style.display = 'none';
                 }
             });
         </script>
