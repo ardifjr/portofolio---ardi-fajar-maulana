@@ -55,9 +55,65 @@
             @keyframes spin {
                 to { transform: rotate(360deg); }
             }
+
+            #pageLoader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #0a0a0a;
+                z-index: 99999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: opacity 0.5s ease-out;
+            }
+
+            #pageLoader.fade-out {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            .loader-content {
+                text-align: center;
+            }
+
+            .loader-spinner {
+                width: 60px;
+                height: 60px;
+                margin: 0 auto 20px;
+                border: 4px solid rgba(255, 255, 255, 0.1);
+                border-top-color: #646cff;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+
+            .loader-text {
+                color: #ffffff;
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+
+            .loader-subtext {
+                color: #9aa0a6;
+                font-size: 0.9rem;
+            }
+
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
         </style>
     </head>
     <body class="d-flex flex-column h-100" style="background-color: #0a0a0a;">
+        <div id="pageLoader">
+            <div class="loader-content">
+                <div class="loader-spinner"></div>
+                <div class="loader-text">Loading Portfolio</div>
+                <div class="loader-subtext">Please wait...</div>
+            </div>
+        </div>
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" style="z-index:1050; background-color: #1a1a1a; border-bottom: 1px solid #333;">
@@ -493,7 +549,7 @@
                                                 <h2 class="fw-bolder">Website Sistem Informasi Kampus ITENAS</h2>
                                                 <p>Sistem informasi kampus yang menyediakan informasi berita, acara, dan pengumuman dengan antarmuka yang modern menggunakan Laravel dan MySQL untuk kemudahan akses bagi seluruh civitas akademika.</p>
                                             </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/digisave.png" style="width: 300px; height: 400px; object-fit: cover;" alt="ITENAS" />
+                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/itenas.png" style="width: 300px; height: 400px; object-fit: cover;" alt="ITENAS" />
                                         </div>
                                     </div>
                                 </div>
@@ -786,39 +842,79 @@
             <span id="closeCertModal" style="position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
             <img id="certModalImg" style="margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 50px;">
         </div>
-        <script>
-            // Certificate Modal Pop-up
-            const certModal = document.getElementById('certModal');
-            const certModalImg = document.getElementById('certModalImg');
-            const closeCertModal = document.getElementById('closeCertModal');
-            const certImages = document.querySelectorAll('.cert-img');
-
-            // Add click event to all certificate images
-            certImages.forEach(img => {
-                img.addEventListener('click', function() {
-                    certModal.style.display = 'block';
-                    certModalImg.src = this.src;
+       <script>
+            // Page Loader Management
+            document.addEventListener('DOMContentLoaded', function() {
+                const pageLoader = document.getElementById('pageLoader');
+                const splineContainer = document.getElementById('splineContainer');
+                const splineViewer = document.querySelector('spline-viewer');
+                
+                let pageLoaded = false;
+                let splineLoaded = false;
+                
+                // Function to hide loader when everything is ready
+                function checkAndHideLoader() {
+                    if (pageLoaded && (splineLoaded || !splineViewer)) {
+                        setTimeout(function() {
+                            pageLoader.classList.add('fade-out');
+                            setTimeout(function() {
+                                pageLoader.style.display = 'none';
+                            }, 500);
+                        }, 300); // Small delay for smooth transition
+                    }
+                }
+                
+                // Mark page as loaded
+                window.addEventListener('load', function() {
+                    pageLoaded = true;
+                    checkAndHideLoader();
                 });
-            });
-
-            // Close modal when X is clicked
-            closeCertModal.addEventListener('click', function() {
-                certModal.style.display = 'none';
-            });
-
-            // Close modal when clicking outside the image
-            certModal.addEventListener('click', function(e) {
-                if (e.target === certModal) {
-                    certModal.style.display = 'none';
+                
+                // Handle Spline loading
+                if (splineContainer && splineViewer) {
+                    // Multiple detection methods for Spline
+                    const checkSplineLoaded = setInterval(function() {
+                        const canvas = splineViewer.shadowRoot?.querySelector('canvas');
+                        if (canvas) {
+                            splineContainer.classList.add('spline-loaded');
+                            splineContainer.classList.remove('spline-loading');
+                            splineLoaded = true;
+                            clearInterval(checkSplineLoaded);
+                            checkAndHideLoader();
+                        }
+                    }, 100);
+                    
+                    // Event listeners
+                    splineViewer.addEventListener('load', function() {
+                        splineLoaded = true;
+                        hideSplineLoading();
+                    });
+                    
+                    splineViewer.addEventListener('ready', function() {
+                        splineLoaded = true;
+                        hideSplineLoading();
+                    });
+                    
+                    function hideSplineLoading() {
+                        splineContainer.classList.add('spline-loaded');
+                        splineContainer.classList.remove('spline-loading');
+                        checkAndHideLoader();
+                    }
+                    
+                    // Fallback: force hide after 5 seconds
+                    setTimeout(function() {
+                        splineLoaded = true;
+                        hideSplineLoading();
+                    }, 5000);
+                } else {
+                    // No Spline viewer, just wait for page
+                    splineLoaded = true;
+                    checkAndHideLoader();
                 }
             });
-
-            // Close modal with ESC key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && certModal.style.display === 'block') {
-                    certModal.style.display = 'none';
-                }
-            });
+            
+            // Set current year dynamically
+            document.getElementById('year').textContent = new Date().getFullYear();
         </script>
     </body>
 </html>
