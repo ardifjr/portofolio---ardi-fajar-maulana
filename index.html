@@ -774,6 +774,51 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="card cert-card shadow rounded-4 h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-center">
+                                        <img src="assets/pbd.jpg" class="cert-img mb-3" alt="API" />
+                                    </div>
+                                    <h5 class="cert-title">Asisten Laboratorium Pemrograman Basis Data</h5>
+                                    <div class="cert-issuer small">Issued by Informatika Fakultas Teknlogi Industri ITENAS</div>
+                                    <div class="small text-muted mb-3">Oktober 2024 - Januari 2025</div>
+                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
+                                        <a href="#" class="small cert-category">Asisten Laboratorium</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card cert-card shadow rounded-4 h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-center">
+                                        <img src="assets/pemdas.jpg" class="cert-img mb-3" alt="API" />
+                                    </div>
+                                    <h5 class="cert-title">Asisten Laboratorium Pemrograman Dasar</h5>
+                                    <div class="cert-issuer small">Issued by Informatika Fakultas Teknlogi Industri ITENAS</div>
+                                    <div class="small text-muted mb-3">September 2024 - Januari 2025</div>
+                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
+                                        <a href="#" class="small cert-category">Asisten Laboratorium</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card cert-card shadow rounded-4 h-100">
+                                <div class="card-body d-flex flex-column">
+                                    <div class="text-center">
+                                        <img src="assets/dlh.jpg" class="cert-img mb-3" alt="API" />
+                                    </div>
+                                    <h5 class="cert-title">Magang di Dinas Lingkungan Hidup Cimahi</h5>
+                                    <div class="cert-issuer small">Issued by Dinas Lingkungan Hidup Kota Cimahi</div>
+                                    <div class="small text-muted mb-3">Oktober 2024 - Februari 2025</div>
+                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
+                                        <a href="#" class="small cert-category">Magang</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -915,6 +960,43 @@
             
             // Set current year dynamically
             document.getElementById('year').textContent = new Date().getFullYear();
+            // Certificate Modal Pop-up Handler
+            document.addEventListener('DOMContentLoaded', function() {
+                const certModal = document.getElementById('certModal');
+                const certModalImg = document.getElementById('certModalImg');
+                const closeCertModal = document.getElementById('closeCertModal');
+                
+                // Get all certificate images
+                const certImages = document.querySelectorAll('.cert-img');
+                
+                // Add click event to each certificate image
+                certImages.forEach(function(img) {
+                    img.addEventListener('click', function() {
+                        certModal.style.display = 'block';
+                        certModalImg.src = this.src;
+                    });
+                });
+                
+                // Close modal when clicking the X button
+                closeCertModal.addEventListener('click', function() {
+                    certModal.style.display = 'none';
+                });
+                
+                // Close modal when clicking outside the image
+                certModal.addEventListener('click', function(event) {
+                    if (event.target === certModal) {
+                        certModal.style.display = 'none';
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', function(event) {
+                    if (event.key === 'Escape' && certModal.style.display === 'block') {
+                        certModal.style.display = 'none';
+                    }
+                });
+            });
         </script>
+        
     </body>
 </html>
