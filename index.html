@@ -1,1002 +1,1283 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Portofolio Ardi Fajar Maulana</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.51/build/spline-viewer.js"></script>
-        <style>
-            /* Smaller project cards while preserving aspect ratio */
-            #projects .project-img{width:210px;height:auto;object-fit:cover}
-            @media (min-width:1200px){#projects .project-img{width:250px}}
-            /* Slightly reduce card body padding for a tighter look */
-            #projects .p-3{padding:.75rem!important}
-            #projects .p-lg-4{padding:1.5rem!important}
-            /* Make navbar fixed at top and avoid content being hidden beneath it */
-            @media (min-width: 992px){
-                body{padding-top:72px}
-            }
-            @media (max-width: 991.98px){
-                body{padding-top:56px}
-            }
-            /* Loading animation for Spline */
-            .spline-loading {
-                position: relative;
-            }
-            .spline-loading::before {
-                content: '';
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 50px;
-                height: 50px;
-                margin: -25px 0 0 -25px;
-                border: 4px solid rgba(255, 255, 255, 0.1);
-                border-top-color: #fff;
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-                z-index: 1;
-            }
-            .spline-loaded::before {
-                display: none;
-            }
-            @keyframes spin {
-                to { transform: rotate(360deg); }
-            }
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<title>Portofolio Ardi Fajar Maulana</title>
 
-            #pageLoader {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: #0a0a0a;
-                z-index: 99999;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                transition: opacity 0.5s ease-out;
-            }
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/img/user.png"> 
+	
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
-            #pageLoader.fade-out {
-                opacity: 0;
-                pointer-events: none;
-            }
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
 
-            .loader-content {
-                text-align: center;
-            }
+	<!-- Fearther CSS -->
+	<link rel="stylesheet" href="assets/css/feather.css">
 
-            .loader-spinner {
-                width: 60px;
-                height: 60px;
-                margin: 0 auto 20px;
-                border: 4px solid rgba(255, 255, 255, 0.1);
-                border-top-color: #646cff;
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-            }
+	<!-- select CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+		
+	<!-- Owl carousel CSS -->
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	
+	<!-- Aos CSS -->
+	<link rel="stylesheet" href="assets/plugins/aos/aos.css">
 
-            .loader-text {
-                color: #ffffff;
-                font-size: 1.2rem;
-                font-weight: 500;
-                margin-bottom: 10px;
-            }
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+</head>
 
-            .loader-subtext {
-                color: #9aa0a6;
-                font-size: 0.9rem;
-            }
+<body>
 
-            @keyframes spin {
-                to { transform: rotate(360deg); }
-            }
-        </style>
-    </head>
-    <body class="d-flex flex-column h-100" style="background-color: #0a0a0a;">
-        <div id="pageLoader">
-            <div class="loader-content">
-                <div class="loader-spinner"></div>
-                <div class="loader-text">Loading Portfolio</div>
-                <div class="loader-subtext">Please wait...</div>
+	
+	<div class="main-wrapper">
+	
+		<!-- Header -->
+		<header class="header">
+			<div class="container">
+				<nav class="navbar navbar-expand-lg header-nav">
+					<div class="navbar-header">
+						<a id="mobile_btn" href="javascript:void(0);">
+							<span class="bar-icon">
+								<span></span>
+								<span></span>
+								<span></span>
+							</span>
+						</a>
+						<a href="index.html" class="navbar-brand logo">
+							<img src="assets/img/logo1.png" class="img-fluid" alt="Logo">
+						</a>
+					</div>
+					<div class="main-menu-wrapper" style="margin-left: auto; display: flex; align-items: center;">
+						<div class="menu-header">
+							<a href="index.html" class="menu-logo">
+								<img src="assets/img/logo1.png" class="img-fluid" alt="Logo">
+							</a>
+							<a id="menu_close" class="menu-close" href="javascript:void(0);"> <i class="fas fa-times"></i></a>
+						</div>
+						<ul class="main-nav" style="margin-left: auto; margin-right: 0; display: flex; justify-content: flex-end; width: 100%;">
+							<li class="has-submenu">
+								<a href="index.html">Home</a>
+							</li>
+							<li>
+                                <a href="categories.html">About Me</a>
+                            </li>
+                            <li>
+                                <a href="categories.html">Education</a>
+                            </li>
+                            <li>
+                                <a href="categories.html">Experience</a>
+                            </li>
+                            <li>
+                                <a href="search.html">Projects</a>
+                            </li>
+                            <li>
+                                <a href="providers.html">Certificate</a>
+                            </li>
+                            <li>
+                                <a href="blog.html">Contact</a>
+                            </li>
+						</ul>
+					</div>
+					<ul class="nav header-navbar-rht">
+						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- /Header -->
+		
+		<!-- Hero Section -->
+		<section class="hero-section">			
+			<div class="container">
+				<div class="side-social-media-six">
+					<ul>
+						<li>
+							<a href="javascript:void(0)"><i class="fa-brands fa-google"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="fa-brands fa-linkedin"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="fa-brands fa-instagram"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="fa-brands fa-twitter"></i></a>
+						</li>
+						<li>
+							<a href="javascript:void(0)"><i class="fa-brands fa-whatsapp"></i></a>
+						</li>
+					</ul>
+				</div>
+				<div class="home-banner home-banner-six">
+					<div class="row w-100 justify-content-center ">
+						<div class="col-lg-6 col-12">
+							<div class="home-banner-main">
+								<img src="assets/img/foto-formal-bg.png" alt="Image" class="img-fluid" style="margin-top: 80px;">
+								<div class="home-banner-six-bg">
+									<img src="assets/img/banner-six-bg2.png" alt="">
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-12">
+							<div class="home-banner-six-bottom">
+								<div class="home-banner-six-detergent">
+									<h5>HELLO, I'M ARDI</h5>
+								</div>
+								<h1>Ardi Fajar Maulana <span>Informatics Graduate</span></h1>
+								<p>Fresh graduate in Informatics with experience in full stack web development, 
+								database management, and data analytics. Passionate about technology and continuously
+								learning to build meaningful digital experiences.</p>
+								<div class="search-box-two search-box-six">
+									<a class="btn search-btn search_service" href="contact.html">Contact Me</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="banner-six-side-img">
+				<img src="assets/img/banner-six-side.png" alt="">
+			</div>
+		</section>
+		<!-- /Hero Section -->
+		
+		<!-- Feature Section -->
+		<section class="about-us-eight-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-12">
+						<div class="passion-eight-all">
+							<div class="section-heading section-heading-eight passion-eight-heading aos" data-aos="fade-up">
+								<h2>About Me</h2>
+							</div>
+							<p>I am a fresh Informatics graduate from Institut Teknologi Nasional Bandung
+							with a GPA of 3.76/4.00 and Summa Cum Laude honors. With experience in full stack 
+							web development through professional, internship, and academic projects, 
+							I am passionate about pursuing a career in technology and software development. 
+							I have skills in frontend, backend, database management, RESTful API development, 
+							and Python for data analytics and machine learning.
+							</p>
+							<ul>
+								<li>
+									<img src="assets/img/favicon.png" alt="">
+									<span>Informatics Graduate</span>
+								</li>
+								<li>
+									<img src="assets/img/favicon.png" alt="">
+									<span>GPA 3.76/4.00 — Summa Cum Laude</span>
+								</li>
+								<li>
+									<img src="assets/img/favicon.png" alt="">
+									<span>Full Stack Software Developer</span>
+								</li>
+								<li>
+									<img src="assets/img/favicon.png" alt="">
+									<span>Data Analytics</span>
+								</li>
+								<li>
+									<img src="assets/img/favicon.png" alt="">
+									<span>Database Development</span>
+								</li>
+								<li>
+									<img src="assets/img/favicon.png" alt="">
+									<span>Tech Enthusiast</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 col-12">
+						<div class="about-eight-main">
+							<img src="assets/img/selempang.png" alt="">
+							<div class="truely-eight-bg">
+								<img src="assets/img/her-section-eight-bg.png" alt="" class="img-fluid">
+							</div>
+							<div class="truely-eight-bg-two">
+								<img src="assets/img/her-section-eight-bg.png" alt="">
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Feature Section -->
+         
+		<!-- Client Section -->
+		<section class="client-section">			
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="section-heading aos" data-aos="fade-up">
+							<h2>Education</h2>
+							<p></p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="owl-carousel testimonial-slider">	
+							<div class="client-widget aos" data-aos="fade-up">
+								<div class="client-img">
+									<a href="#">
+										<img class="img-fluid" alt="Image" src="assets/img/itenas.png">
+									</a>
+								</div>
+								<div class="client-content">
+									<h5>National Institute of Technology, Bandung</h5>
+									<h6>Sep 2022 – Sep 2026</h6> <p></p>
+									<!-- <div class="rating">
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+									</div> -->
+									<p>Bachelor of Informatics — GPA: 3.76/4.00, Summa Cum Laude, Excellent Accreditation</p>
+									<p>Relevant Coursework: Programming, Databases, Software Engineering, Artificial Intelligence, Data Analytics, Web Application Development</p>
+								</div>
+							</div>
+							<div class="client-widget aos" data-aos="fade-up">
+								<div class="client-img">
+									<a href="#">
+										<img class="img-fluid" alt="Image" src="assets/img/smk2.png">
+									</a>
+								</div>
+								<div class="client-content">
+									<h5>SMKN 2 Cimahi</h5>
+									<h6>Sep 2019 – Jun 2022</h6> <p></p>
+									<!-- <div class="rating">
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+										<i class="fas fa-star filled"></i>
+									</div> -->
+									<p>Software Engineering — Final Diploma Average: 84.12, Eligible Student</p>
+									<p>Relevant Coursework: Basic Programming, Databases, Web Programming, Object-Oriented Programming, Software Development</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Client Section -->
+		
+		<!-- Service Section -->
+		<section class="service-section">			
+			<div class="container">
+				<div class="section-heading">
+					<div class="row">
+						<div class="col-md-6 aos" data-aos="fade-up">						
+							<h2>Experience</h2>
+							<p>
+								My experience in technology through professional work, internships, academic projects, and teaching assistance.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="service-grid">
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/services/blue.png">
+									</a>
+									<div class="fav-item">
+										<a href="categories.html"><span class="item-cat">Full Stack Web Developer</span></a>
+										</a>
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Bara Enterprise</a>
+									</h3>
+									<p>Sep 2021 - Nov 2022<span class="rate"></p>
+									<div class="serv-info">
+										<p>Developed a café website with transaction management, database management, frontend, and backend functionality.
+										Improved operational efficiency by automating transaction processes and integrating a user-friendly interface.
+										Managed the full development lifecycle, from database design to user interface development.</p>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/services/blue.png">
+									</a>
+									<div class="fav-item">
+										<a href="categories.html"><span class="item-cat">Full Stack Web Developer</span></a>
+										</a>
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">PT Allin Karya Nusantara</a>
+									</h3>
+									<p>Jun 2023 - Jul 2024<span class="rate"></p>
+									<div class="serv-info">
+										<p>Developed a government website for DPPKB Bandung, handling the complete development process through deployment.
+										Developed ExamEdu, a website for civil service entrance exam preparation, covering design, feature implementation, and deployment.
+										Enhanced the Huma Consulting website by adding a driving license (SIM) test category.</p>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/services/blue.png">
+									</a>
+									<div class="fav-item">
+										<a href="categories.html"><span class="item-cat">Full Stack Web Developer</span></a>
+										</a>
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Dinas Lingkungan Hidup Cimahi</a>
+									</h3>
+									<p>Okt 2024 - Feb 2025<span class="rate"></p>
+									<div class="serv-info">
+										<p>Developed an industrial pollution monitoring website from the ground up, including database design, backend, and frontend development.
+										Designed an intuitive user interface to facilitate access to and management of monitoring data.</p>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/services/blue.png">
+									</a>
+									<div class="fav-item">
+										<a href="categories.html"><span class="item-cat">Database Programming Laboratory Assistant</span></a>
+										</a>
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Institut Teknologi Nasional Bandung</a>
+									</h3>
+									<p>Sep 2024 - Jan 2025<span class="rate"></p>
+									<div class="serv-info">
+										<p>Guided students in understanding database programming concepts, including ERD, TRD, DDS, database normalization, and SQL query implementation.
+										Assisted with laboratory sessions and supported students in understanding and applying the course material.</p>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/services/blue.png">
+									</a>
+									<div class="fav-item">
+										<a href="categories.html"><span class="item-cat">Basic Programming Laboratory Assistant</span></a>
+										</a>
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Institut Teknologi Nasional Bandung</a>
+									</h3>
+									<p>Sep 2024 - Jan 2025<span class="rate"></p>
+									<div class="serv-info">
+										<p>Guided students in learning basic programming logic using Python, covering variables, control flow, functions, and debugging, and applying these concepts to Internet of Things (IoT) applications using Raspberry Pi.
+										Supported students in developing a strong foundation in programming logic.</p>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/services/blue.png">
+									</a>
+									<div class="fav-item">
+										<a href="categories.html"><span class="item-cat">Full Stack</span></a>
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">PT Multyartha Indo Daya</a>
+									</h3>
+									<p>Mar 2026 – Apr 2026</p>
+									<div class="serv-info">
+										<p>Developed website designs for the Multyartha Indo Daya company profile and the marketing website for Technoflex Living Bandung apartment units, covering both frontend and backend development.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Service Section -->
+		
+		<!-- Service Section -->
+		<section class="service-section">			
+			<div class="container">
+				<div class="section-heading">
+					<div class="row">
+						<div class="col-md-6 aos" data-aos="fade-up">
+							<h2>Projects</h2>
+							<p>A collection of projects I have worked on throughout my academic and professional journey.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="owl-carousel features-four-slider common-four-slider projects-slider">
+								
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/dlh2.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Website Pemantauan Pencemaran Industri</a>
+									</h3>
+									<p>Website pemantauan pencemaran industri di Cimahi dengan fitur dashboard real-time, pelaporan otomatis, dan visualisasi data menggunakan teknologi web modern untuk memudahkan monitoring kualitas lingkungan.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/dppkb.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Website Kepemerintahan DPPKB Bandung</a>
+									</h3>
+									<p>Website resmi pemerintah DPPKB Bandung yang menyediakan informasi dan layanan publik dengan antarmuka yang user-friendly dan sistem manajemen konten yang mudah dikelola.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/examedu.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Website ExamEdu Platform Latihan Tes Kedinasan</a>
+									</h3>
+									<p>Platform pembelajaran online untuk latihan tes pendaftaran kedinasan dengan fitur bank soal, simulasi ujian, dan analisis hasil belajar yang komprehensif.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/itenas.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Website Sistem Informasi Kampus ITENAS</a>
+									</h3>
+									<p>Sistem informasi kampus yang menyediakan informasi berita, acara, dan pengumuman dengan antarmuka yang modern menggunakan Laravel dan MySQL untuk kemudahan akses bagi seluruh civitas akademika.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/huma.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Web Huma Consulting Kategori Tes SIM</a>
+									</h3>
+									<p>Mengembangkan website Huma Consulting dengan menambahkan kategori tes untuk pembuatan SIM.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/portal.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Miniatur Portal Pintar NodeMCU</a>
+									</h3>
+									<p>Membangun miniatur portal pintar menggunakan NodeMCU untuk simulasi otomatisasi akses pintu menggunakan bahasa pemrograman C.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/pbd.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Aplikasi Penjualan & Inventaris</a>
+									</h3>
+									<p>Membuat aplikasi berbasis GUI untuk pengelolaan penjualan dan inventaris di toko baju.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/usia.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Deteksi Usia dari Analisis Kulit Wajah</a>
+									</h3>
+									<p>Mengembangkan aplikasi untuk mendeteksi usia berdasarkan analisis kulit wajah menggunakan teknik pengolahan citra dan bahasa pemrograman Python.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/calcucar.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Game Edukasi Matematika - Unity</a>
+									</h3>
+									<p>Membuat game edukasi matematika untuk anak SD kelas 3 menggunakan Unity.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/digisave.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Website Tabungan Uang Kunci</a>
+									</h3>
+									<p>Membuat website tabungan uang kunci menggunakan Laravel dan Vue.js, serta terintegrasi dengan layanan pembayaran Midtrans.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/kesehatan.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Dashboard Monitoring Layanan Kesehatan</a>
+									</h3>
+									<p>Merancang arsitektur sistem dan mengembangkan dashboard terintegrasi untuk monitoring layanan kesehatan real-time menggunakan Python.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+							<div class="service-widget aos" data-aos="fade-up">
+								<div class="service-img">
+									<a href="service-details.html">
+										<img class="img-fluid serv-img" alt="Service Image" src="assets/img/portofolio/saham.png">
+									</a>
+									<div class="fav-item">
+									</div>
+									<div class="item-info">
+									</div>
+								</div>
+								<div class="service-content">
+									<h3 class="title">
+										<a href="service-details.html">Web Analisis Support dan Resistance Pada Saham Bursa Efek Indonesia</a>
+									</h3>
+									<p>Analisis data saham Bursa Efek Indonesia untuk menentukan level support dan resistance.</p>
+									<div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- /Service Section -->
+
+        <!-- Features Services -->
+        <section class="features-four-section">
+            <div class="container">
+                <div class="section-heading section-heading-four">
+                    <div class="row align-items-center">
+                        <div class="col-md-6 aos" data-aos="fade-up">
+                            <h2>Certificate</h2>
+							<p>A collection of training and certifications that reflect my learning and development in technology.</p>                        </div>
+                        <div class="col-md-6 text-md-end aos" data-aos="fade-up">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12"> 
+                        <div class="owl-carousel features-four-slider common-four-slider">
+                            <div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/data-academy.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Database</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Pelatihan Merancang Dan Membuat Basis Data Menggunakan SQL Untuk Analisis Database</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Data Academy</p>
+                                    <ul>
+                                        <li>01 November 2022 - 17 November 2022</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/ids.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Web Development</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Pelatihan membangun Website dengan Wordpress & HTML bagi Pengembang Internet</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Internasional Design School</p>
+                                    <ul>
+                                        <li>24 Oktober 2022 - 02 November 2022</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/revou.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Data Analytics</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Mini Course Data Analytics</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by RevoU</p>
+                                    <ul>
+                                        <li>24 Oktober 2022 - 31 Oktober 2022</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/myedusolvex.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Android Development</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Pelatihan membangun aplikasi berbasis android menggunakan kotlin bagi software developer</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by MyEduSolvex</p>
+                                    <ul>
+                                        <li>24 November 2022 - 01 Desember 2022</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/huawei.png">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Python</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Course Python Programming Basics</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Huawei Academy</p>
+                                    <ul>
+                                        <li>28 November 2023 - 29 November 2023</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/oracle-foundations.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Java</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Oracle Foundations</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Oracle Academy</p>
+                                    <ul>
+                                        <li>17 Juni 2021</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/oracle-fundamentals.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Java</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Oracle Fundamentals</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Oracle Academy</p>
+                                    <ul>
+                                        <li>4 Januari 2021</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/dicoding.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>HTML</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Belajar Dasar Pemrograman Web</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Dicoding</p>
+                                    <ul>
+                                        <li>5 Februari 2021</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/pbd.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Asisten Laboratorium</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Asisten Laboratorium Pemrograman Basis Data</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Informatika Fakultas Teknlogi Industri ITENAS</p>
+                                    <ul>
+                                        <li>Oktober 2024 - Januari 2025</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/pemdas.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Asisten Laboratorium</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Asisten Laboratorium Pemrograman Dasar</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Informatika Fakultas Teknlogi Industri ITENAS</p>
+                                    <ul>
+                                        <li>September 2024 - Januari 2025</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+							<div class="service-widget service-two aos" data-aos="fade-up">
+                                <div class="service-img service-four-img">
+                                    <a href="service-details.html">
+                                        <img class="img-fluid serv-img" alt="Service Image"
+                                            src="assets/img/portofolio/dlh.jpg">
+                                    </a>
+                                    <div class="fav-item">
+                                        <div class="rate-four">
+                                            <span>Internship</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-content service-four-content">
+                                    <h3 class="title">
+                                        <a href="service-details.html">Intern Dinas Lingkungan Hidup Cimahi</a>
+                                    </h3>
+                                    <p class="service-cater-bottom">Issued by Dinas Lingkungan Hidup Cimahi</p>
+                                    <ul>
+                                        <li>Oktober 2024 - Februari 2025</li>
+                                    </ul>
+                                    <p>desc</p>
+                                    <div class="serv-info">
+										<a href="service-details.html" class="btn btn-book">Detail</a>
+									</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark py-3 fixed-top" style="z-index:1050; background-color: #1a1a1a; border-bottom: 1px solid #333;">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="#home"><span class="fw-bolder text-primary">Portofolio Ardi Fajar Maulana</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#certificate">Certificate</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Header-->
-            <header class="py-5 position-relative" id="home" style="min-height: clamp(500px, 100vh, 800px); display: flex; align-items: center; overflow: hidden; background-color: #000000;">
-                <!-- Spline Background -->
-                <div style="position: absolute; top: -90px; right: -500px; width: 120%; height: 120%; z-index: 0; overflow: visible; pointer-events: none;" class="d-none d-lg-block spline-loading" id="splineContainer">
-                    <spline-viewer url="https://prod.spline.design/LAVimTL6zOD6h51e/scene.splinecode" style="width: 100%; height: 100%;"></spline-viewer>
-                </div>
-                <!-- Content -->
-                <div class="container px-5 pb-5 position-relative" style="z-index: 1;">
-                    <div class="row gx-5 align-items-center">
-                        <div class="col-12 col-lg-6 col-xxl-5">
-                            <!-- Header text content-->
-                            <div class="text-center text-lg-start">
-                                <div class="badge bg-gradient-primary-to-secondary text-white mb-4"><div class="text-uppercase">Technology &middot; Data Enthusiast</div></div>
-                                <div class="fs-3 fw-light text-muted">Saya memiliki latar belakang teknologi informasi dengan minat pada</div>
-                                <h1 class="display-4 fw-bolder mb-2"><span class="text-gradient d-inline">Pengolahan data, Analisis, dan Pengembangan Sistem Berbasis Teknologi.</span></h1>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start mb-3" style="margin-top: 20px;">
-                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#resume">Lihat Resume</a>
-                                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="#projects">Lihat Projek</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <!-- About Section-->
-            <section class="py-5" style="background-color: #000000;" id="about">
-                <div class="container px-3 px-md-5">
-                    <div class="row gx-3 gx-md-5 align-items-center justify-content-center">
-                        <div class="col-12 col-lg-5 col-xxl-4 mb-5 mb-lg-0 order-2 order-lg-1 ps-3 ps-md-4 ps-lg-5">
-                            <!-- Profile picture-->
-                            <div class="d-flex justify-content-center">
-                                <div class="profile bg-gradient-primary-to-secondary">
-                                    <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                    <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                    <img class="profile-img" src="assets/profile.png" alt="..." />
-                                    <div class="dots-1">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-2">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-3">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-4">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-6 col-xxl-7 order-1 order-lg-2">
-                            <div class="my-4 my-lg-5 ps-0 ps-lg-4 text-center text-lg-start">
-                                <h2 class="display-5 fw-bolder mb-4"><span class="text-gradient d-inline">About Me</span></h2>
-                                <p class="lead fw-light text-muted mb-3">Ardi Fajar Maulana</p>
-                                <p class="text-muted mb-4">adalah mahasiswa semester delapan Informatika di Institut Teknologi Nasional Bandung dengan spesialisasi pengembangan web dan pemrograman Python. Ia memiliki pengalaman sebagai Full Stack Web Developer di PT Allin Karya Nusantara, Bara Enterprise, serta instansi pemerintahan, terlibat langsung dalam pengembangan berbagai sistem informasi, website layanan publik, dan aplikasi berbasis data dari tahap perancangan hingga implementasi. Selain itu, Ardi juga berpengalaman sebagai Asisten Laboratorium Pemrograman Dasar dan Basis Data, membimbing mahasiswa dalam logika pemrograman, database, dan implementasi teknologi. Dengan kemampuan analisis dan pemecahan masalah yang kuat, ia aktif mengembangkan solusi teknologi, termasuk proyek berbasis AI, IoT, data analytics, dan pengolahan citra, serta terus meningkatkan kompetensinya di bidang teknologi informasi.</p>
-                                <div class="d-flex fs-2 gap-4 justify-content-center justify-content-lg-start">
-                                    <a class="text-gradient" href="mailto:ardifjr27@gmail.com" title="Email"><i class="bi bi-envelope"></i></a>
-                                    <a class="text-gradient" href="https://www.linkedin.com/in/ardi-fajar-maulana-996879282/" target="_blank" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                                    <a class="text-gradient" href="https://github.com/ardifjr" target="_blank" title="GitHub"><i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Resume Section-->
-            <section class="py-5" id="resume">
-                <div class="container px-5 my-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
-                    </div>
-                    <div class="row gx-4 gy-4 justify-content-center align-items-stretch">
-                        <div class="col-12">
-                            <!-- Experience Section-->
-                            <section>
-                                <div class="d-flex align-items-center justify-content-between mb-4">
-                                    <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                                </div>
-                                <div class="row gx-4 gy-4 justify-content-center align-items-stretch">
-                                    <div class="col-md-6 col-lg-4">
-                                        <!-- Experience Card 1-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-primary fw-bolder mb-2">Oct 2024 - Feb 2025</div>
-                                                            <div class="small fw-bolder">Full Stack Web Developer</div>
-                                                            <div class="small text-muted">Dinas Lingkungan Hidup Cimahi</div>
-                                                            <div class="small text-muted">Cimahi, Indonesia</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Mengembangkan website pemantauan pencemaran industri di Cimahi dari awal hingga siap digunakan. Merancang antarmuka pengguna yang intuitif untuk mempermudah akses dan pengelolaan data pemantauan.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <!-- Experience Card 2-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-primary fw-bolder mb-2">Jun 2023 - Jul 2024</div>
-                                                            <div class="small fw-bolder">Full Stack Web Developer</div>
-                                                            <div class="small text-muted">PT. Allin Karya Nusantara</div>
-                                                            <div class="small text-muted">Bandung, Indonesia</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Membuat website kepemerintahan DPPKB Bandung, website ExamEdu untuk latihan tes pendaftaran kedinasan, dan website Huma Consulting dengan menambahkan kategori tes untuk pembuatan SIM.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <!-- Experience Card 3-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-primary fw-bolder mb-2">Sep 2021 - Nov 2022</div>
-                                                            <div class="small fw-bolder">Full Stack Web Developer Intern</div>
-                                                            <div class="small text-muted">Bara Enterprise</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Mengembangkan website kafe yang mencakup sistem transaksi, manajemen database, frontend, dan backend. Meningkatkan efisiensi operasional dengan mengotomatisasi proses transaksi dan mengintegrasikan antarmuka yang ramah pengguna. Mengelola seluruh siklus pengembangan, mulai dari perancangan database hingga desain antarmuka.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <!-- Experience Card 4-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-primary fw-bolder mb-2">Sep 2024 - Jan 2025</div>
-                                                            <div class="small fw-bolder">Asisten Laboratorium Pemrograman Basis Data</div>
-                                                            <div class="small text-muted">ITENAS</div>
-                                                            <div class="small text-muted">Bandung, Indonesia</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Membimbing mahasiswa dalam memahami konsep-konsep pemrograman basis data, seperti desain ERD, TRD, DDS, normalisasi database, dan implementasi query SQL. Berperan aktif dalam membantu proses praktikum, memastikan mahasiswa dapat menguasai materi dengan baik.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-lg-4">
-                                        <!-- Experience Card 5-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-primary fw-bolder mb-2">Sep 2024 - Jan 2025</div>
-                                                            <div class="small fw-bolder">Asisten Laboratorium Pemrograman Dasar</div>
-                                                            <div class="small text-muted">ITENAS</div>
-                                                            <div class="small text-muted">Bandung, Indonesia</div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Membimbing mahasiswa dalam memahami logika pemrograman dasar menggunakan Python, meliputi penggunaan variabel, kontrol alur, fungsi, dan debugging kemudian diimplementasikan ke dalam aplikasi Internet of Things (IoT) menggunakan Raspberry Pi. Mendukung mahasiswa dalam membangun pondasi logika pemrograman yang kuat.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- Education Section-->
-                            <section>
-                                <h2 class="text-secondary fw-bolder mb-4">Education</h2>
-                                <div class="row gx-4 gy-4">
-                                    <div class="col-md-6">
-                                        <!-- Education Card 1-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-secondary fw-bolder mb-2">Sep 2022 - Sekarang</div>
-                                                            <div class="mb-2">
-                                                                <div class="small fw-bolder">Institut Teknologi Nasional Bandung</div>
-                                                                <div class="small text-muted">Bandung, Indonesia</div>
-                                                            </div>
-                                                            <div class="fst-italic">
-                                                                <div class="small text-muted">S1 Informatika</div>
-                                                                <div class="small text-muted">Semester 8</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Mempelajari mata kuliah terkait pengembangan perangkat lunak, manajemen proyek, dan teknologi informasi terkini.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <!-- Education Card 2-->
-                                        <div class="card shadow border-0 rounded-4 mb-4 h-100">
-                                            <div class="card-body p-4">
-                                                <div class="row align-items-start gx-4">
-                                                    <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                                        <div class="bg-light p-4 rounded-4">
-                                                            <div class="text-secondary fw-bolder mb-2">Sep 2019 - Jun 2022</div>
-                                                            <div class="mb-2">
-                                                                <div class="small fw-bolder">SMKN 2 Cimahi</div>
-                                                                <div class="small text-muted">Cimahi, Indonesia</div>
-                                                            </div>
-                                                            <div class="fst-italic">
-                                                                <div class="small text-muted">Rekayasa Perangkat Lunak</div>
-                                                                <div class="small text-muted">Teknologi Komputer dan Informatika</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-8"><div>Mempelajari dasar-dasar pengembangan perangkat lunak, pemrograman, dan teknologi komputer.</div></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <!-- Divider-->
-                            <div class="pb-5"></div>
-                            <!-- Skills Section-->
-                            <section>
-                                <!-- Skillset Card-->
-                                <div class="card shadow border-0 rounded-4 mb-5">
-                                    <div class="card-body p-5">
-                                        <!-- Professional skills list-->
-                                        <div class="mb-5">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
-                                                <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Web & Backend Development</div></div>
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">RESTful API Development</div></div>
-                                                <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Information System Development</div></div>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3">
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Database Management (MySQL)</div></div>
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Data Analysis & Image Processing (Python)</div></div>
-                                            </div>
-                                        </div>
-                                        <!-- Technical skills list-->
-                                        <div class="mb-0">
-                                            <div class="d-flex align-items-center mb-4">
-                                                <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
-                                                <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Technical Skills</span></h3>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">PHP (Laravel, Lumen)</div></div>
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">JavaScript</div></div>
-                                                <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Python</div></div>
-                                            </div>
-                                            <div class="row row-cols-1 row-cols-md-3">
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">C++</div></div>
-                                                <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">HTML, CSS</div></div>
-                                                <div class="col"><div class="d-flex align-items-center bg-light rounded-4 p-3 h-100">Git & GitHub</div></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Projects Section-->
-            <section class="py-5" id="projects" style="background-color: #1a1a1a;">
-                <div class="container-fluid px-3 mb-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Project</span></h1>
-                    </div>
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-12">
-                            <div class="row gx-4 gy-4">
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Website Pemantauan Pencemaran Industri</h2>
-                                                <p>Website pemantauan pencemaran industri di Cimahi dengan fitur dashboard real-time, pelaporan otomatis, dan visualisasi data menggunakan teknologi web modern untuk memudahkan monitoring kualitas lingkungan.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/dlh2.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Pemantauan Pencemaran"/>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Website Kepemerintahan DPPKB Bandung</h2>
-                                                <p>Website resmi pemerintah DPPKB Bandung yang menyediakan informasi dan layanan publik dengan antarmuka yang user-friendly dan sistem manajemen konten yang mudah dikelola.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/dppkb.png" style="width: 300px; height: 400px; object-fit: cover;" alt="DPPKB Bandung" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Website ExamEdu - Platform Latihan Tes Kedinasan</h2>
-                                                <p>Platform pembelajaran online untuk latihan tes pendaftaran kedinasan dengan fitur bank soal, simulasi ujian, dan analisis hasil belajar yang komprehensif.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/examedu.png" style="width: 300px; height: 400px; object-fit: cover;" alt="ExamEdu" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Website Sistem Informasi Kampus ITENAS</h2>
-                                                <p>Sistem informasi kampus yang menyediakan informasi berita, acara, dan pengumuman dengan antarmuka yang modern menggunakan Laravel dan MySQL untuk kemudahan akses bagi seluruh civitas akademika.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/itenas.png" style="width: 300px; height: 400px; object-fit: cover;" alt="ITENAS" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Huma Consulting - Kategori Tes SIM</h2>
-                                                <p>Mengembangkan website Huma Consulting dengan menambahkan kategori tes untuk pembuatan SIM.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/huma.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Huma Consulting" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Miniatur Portal Pintar - NodeMCU</h2>
-                                                <p>Membangun miniatur portal pintar menggunakan NodeMCU untuk simulasi otomatisasi akses pintu menggunakan bahasa pemrograman C.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/portal.png" style="width: 300px; height: 400px; object-fit: cover;" alt="NodeMCU Portal" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Aplikasi Penjualan & Inventaris</h2>
-                                                <p>Membuat aplikasi berbasis GUI untuk pengelolaan penjualan dan inventaris di toko baju.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/pbd.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Aplikasi Penjualan" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Deteksi Usia dari Analisis Kulit Wajah</h2>
-                                                <p>Mengembangkan aplikasi untuk mendeteksi usia berdasarkan analisis kulit wajah menggunakan teknik pengolahan citra dan bahasa pemrograman Python.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/usia.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Deteksi Usia" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Game Edukasi Matematika - Unity</h2>
-                                                <p>Membuat game edukasi matematika untuk anak SD kelas 3 menggunakan Unity.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/calcucar.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Game Edukasi" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Website Tabungan Uang Kunci</h2>
-                                                <p>Membuat website tabungan uang kunci menggunakan Laravel dan Vue.js, serta terintegrasi dengan layanan pembayaran Midtrans.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/digisave.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Tabungan Uang Kunci" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="card overflow-hidden shadow rounded-4 border-0 h-100">
-                                        <div class="card-body p-0 d-flex align-items-center flex-column flex-lg-row h-100">
-                                            <div class="p-3 p-lg-4 flex-grow-1">
-                                                <h2 class="fw-bolder">Dashboard Monitoring Layanan Kesehatan</h2>
-                                                <p>Merancang arsitektur sistem dan mengembangkan dashboard terintegrasi untuk monitoring layanan kesehatan real-time menggunakan Python.</p>
-                                            </div>
-                                            <img class="img-fluid d-none d-lg-block project-img" src="assets/kesehatan.png" style="width: 300px; height: 400px; object-fit: cover;" alt="Dashboard Kesehatan" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Certificates Section -->
-            <section id="certificate" class="py-5" style="background-color: #070707;">
-                <style>
-                    .cert-card{background:#0d0d0d;border:0;color:#eef2f5}
-                    .cert-card .card-body{position:relative;padding:1.25rem}
-                    .cert-img{max-height:140px;object-fit:contain;background:#fff;padding:8px;border-radius:4px;cursor:pointer;transition:transform 0.2s}
-                    .cert-img:hover{transform:scale(1.05)}
-                    .cert-title{color:#ffffff;font-weight:700;margin-top:0.25rem}
-                    .cert-issuer{color:#9aa0a6}
-                    .cert-category{color:#4ea1ff;text-decoration:none}
-                    .cert-link{position:absolute;right:1rem;bottom:1rem;color:#9aa0a6}
-                    @media (max-width:767.98px){.cert-img{max-height:100px}}
-                </style>
-                <div class="container px-5 mb-5">
-                    <div class="text-center mb-4">
-                        <h1 class="display-6 fw-bolder mb-0 text-gradient">Certificates</h1>
-                    </div>
-                    <div class="row gx-4 gy-4">
-                        <!-- 9 certificate cards styled like attachment -->
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/data academy.jpg" class="cert-img mb-3" alt="Fundamentals of Deep Learning" />
-                                    </div>
-                                    <h5 class="cert-title">Pelatihan Merancang Dan Membuat Basis Data Menggunakan SQL Untuk Analisis Database</h5>
-                                    <div class="cert-issuer small">Issued by Data Academy</div>
-                                    <div class="small text-muted mb-3">01 November 2022 - 17 November 2022</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Database</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/ids.jpg" class="cert-img mb-3" alt="Web Development" />
-                                    </div>
-                                    <h5 class="cert-title">Pelatihan membangun Website dengan Wordpress & HTML bagi Pengembang Internet</h5>
-                                    <div class="cert-issuer small">Issued by Internasional Design School</div>
-                                    <div class="small text-muted mb-3">24 Oktober 2022 - 02 November 2022</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Web Development</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/revou.jpg" class="cert-img mb-3" alt="Python Basics" />
-                                    </div>
-                                    <h5 class="cert-title">Mini Course Data Analytics</h5>
-                                    <div class="cert-issuer small">Issued by RevoU</div>
-                                    <div class="small text-muted mb-3">24 Oktober 2022 - 31 Oktober 2022</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Data Analytics</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/MyEduSolvex.jpg" class="cert-img mb-3" alt="Data Analysis" />
-                                    </div>
-                                    <h5 class="cert-title">Pelatihan membangun aplikasi berbasis android menggunakan kotlin bagi software developer</h5>
-                                    <div class="cert-issuer small">Issued by MyEduSolvex</div>
-                                    <div class="small text-muted mb-3">24 November 2022 - 01 Desember 2022</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Android Development</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/huawei.png" class="cert-img mb-3" alt="Computer Vision" />
-                                    </div>
-                                    <h5 class="cert-title">Course Python Programming Basics</h5>
-                                    <div class="cert-issuer small">Issued by Huawei Academy</div>
-                                    <div class="small text-muted mb-3">28 November 2023 - 29 November 2023</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Python</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/oracle foundations.jpg" class="cert-img mb-3" alt="IoT" />
-                                    </div>
-                                    <h5 class="cert-title">Oracle Foundations</h5>
-                                    <div class="cert-issuer small">Issued by Oracle Academy</div>
-                                    <div class="small text-muted mb-3">17 Juni 2021</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Java</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/oracle fundamentals.jpg" class="cert-img mb-3" alt="Laravel" />
-                                    </div>
-                                    <h5 class="cert-title">Oracle Fundamentals</h5>
-                                    <div class="cert-issuer small">Issued by Oracle Academy</div>
-                                    <div class="small text-muted mb-3">4 Januari 2021</div>
-                                    <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Java</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/dicoding.jpg" class="cert-img mb-3" alt="API" />
-                                    </div>
-                                    <h5 class="cert-title">Belajar Dasar Pemrograman Web</h5>
-                                    <div class="cert-issuer small">Issued by Dicoding</div>
-                                    <div class="small text-muted mb-3">5 Februari 2021</div>
-                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">HTML</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/pbd.jpg" class="cert-img mb-3" alt="API" />
-                                    </div>
-                                    <h5 class="cert-title">Asisten Laboratorium Pemrograman Basis Data</h5>
-                                    <div class="cert-issuer small">Issued by Informatika Fakultas Teknlogi Industri ITENAS</div>
-                                    <div class="small text-muted mb-3">Oktober 2024 - Januari 2025</div>
-                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Asisten Laboratorium</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/pemdas.jpg" class="cert-img mb-3" alt="API" />
-                                    </div>
-                                    <h5 class="cert-title">Asisten Laboratorium Pemrograman Dasar</h5>
-                                    <div class="cert-issuer small">Issued by Informatika Fakultas Teknlogi Industri ITENAS</div>
-                                    <div class="small text-muted mb-3">September 2024 - Januari 2025</div>
-                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Asisten Laboratorium</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card cert-card shadow rounded-4 h-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="text-center">
-                                        <img src="assets/dlh.jpg" class="cert-img mb-3" alt="API" />
-                                    </div>
-                                    <h5 class="cert-title">Magang di Dinas Lingkungan Hidup Cimahi</h5>
-                                    <div class="cert-issuer small">Issued by Dinas Lingkungan Hidup Kota Cimahi</div>
-                                    <div class="small text-muted mb-3">Oktober 2024 - Februari 2025</div>
-                                   <div style="position: absolute; bottom: 1rem; left: 1.25rem;">
-                                        <a href="#" class="small cert-category">Magang</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Call to action section-->
-            <section id="contact" class="py-5 bg-gradient-primary-to-secondary text-white">
-                <div class="container px-5 my-5">
-                    <div class="text-center">
-                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="mailto:ardifjr27@gmail.com">Contact me</a>
-                        <div class="mt-3 small">
-                            <a class="text-white" href="mailto:ardifjr27@gmail.com">ardifjr27@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="py-4 mt-auto" style="background-color: #1a1a1a; border-top: 1px solid #333;">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0" style="color: #ffffff;">Copyright &copy; Ardi Fajar Maulana <span id="year"></span></div></div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <script>
-            // Set current year dynamically
-            document.getElementById('year').textContent = new Date().getFullYear();
-        </script>
-       <script>
-            // Handle Spline loading - hide loader when ready
-            document.addEventListener('DOMContentLoaded', function() {
-                const splineContainer = document.getElementById('splineContainer');
-                const splineViewer = document.querySelector('spline-viewer');
-                
-                if (splineContainer && splineViewer) {
-                    // Method 1: Check if canvas exists (Spline creates canvas when loaded)
-                    const checkSplineLoaded = setInterval(function() {
-                        const canvas = splineViewer.shadowRoot?.querySelector('canvas');
-                        if (canvas) {
-                            splineContainer.classList.add('spline-loaded');
-                            splineContainer.classList.remove('spline-loading');
-                            clearInterval(checkSplineLoaded);
-                        }
-                    }, 100);
-                    
-                    // Method 2: Try multiple event listeners
-                    splineViewer.addEventListener('load', hideLoading);
-                    splineViewer.addEventListener('ready', hideLoading);
-                    
-                    function hideLoading() {
-                        splineContainer.classList.add('spline-loaded');
-                        splineContainer.classList.remove('spline-loading');
-                    }
-                    
-                    // Fallback: force hide after 3 seconds
-                    setTimeout(hideLoading, 3000);
-                }
-            });
-        </script>
-        <!-- Modal Pop-up untuk Certificate -->
-        <div id="certModal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.9);">
-            <span id="closeCertModal" style="position: absolute; top: 20px; right: 35px; color: #f1f1f1; font-size: 40px; font-weight: bold; cursor: pointer; z-index: 10000;">&times;</span>
-            <img id="certModalImg" style="margin: auto; display: block; max-width: 90%; max-height: 90%; margin-top: 50px;">
-        </div>
-       <script>
-            // Page Loader Management
-            document.addEventListener('DOMContentLoaded', function() {
-                const pageLoader = document.getElementById('pageLoader');
-                const splineContainer = document.getElementById('splineContainer');
-                const splineViewer = document.querySelector('spline-viewer');
-                
-                let pageLoaded = false;
-                let splineLoaded = false;
-                
-                // Function to hide loader when everything is ready
-                function checkAndHideLoader() {
-                    if (pageLoaded && (splineLoaded || !splineViewer)) {
-                        setTimeout(function() {
-                            pageLoader.classList.add('fade-out');
-                            setTimeout(function() {
-                                pageLoader.style.display = 'none';
-                            }, 500);
-                        }, 300); // Small delay for smooth transition
-                    }
-                }
-                
-                // Mark page as loaded
-                window.addEventListener('load', function() {
-                    pageLoaded = true;
-                    checkAndHideLoader();
-                });
-                
-                // Handle Spline loading
-                if (splineContainer && splineViewer) {
-                    // Multiple detection methods for Spline
-                    const checkSplineLoaded = setInterval(function() {
-                        const canvas = splineViewer.shadowRoot?.querySelector('canvas');
-                        if (canvas) {
-                            splineContainer.classList.add('spline-loaded');
-                            splineContainer.classList.remove('spline-loading');
-                            splineLoaded = true;
-                            clearInterval(checkSplineLoaded);
-                            checkAndHideLoader();
-                        }
-                    }, 100);
-                    
-                    // Event listeners
-                    splineViewer.addEventListener('load', function() {
-                        splineLoaded = true;
-                        hideSplineLoading();
-                    });
-                    
-                    splineViewer.addEventListener('ready', function() {
-                        splineLoaded = true;
-                        hideSplineLoading();
-                    });
-                    
-                    function hideSplineLoading() {
-                        splineContainer.classList.add('spline-loaded');
-                        splineContainer.classList.remove('spline-loading');
-                        checkAndHideLoader();
-                    }
-                    
-                    // Fallback: force hide after 5 seconds
-                    setTimeout(function() {
-                        splineLoaded = true;
-                        hideSplineLoading();
-                    }, 5000);
-                } else {
-                    // No Spline viewer, just wait for page
-                    splineLoaded = true;
-                    checkAndHideLoader();
-                }
-            });
-            
-            // Set current year dynamically
-            document.getElementById('year').textContent = new Date().getFullYear();
-            // Certificate Modal Pop-up Handler
-            document.addEventListener('DOMContentLoaded', function() {
-                const certModal = document.getElementById('certModal');
-                const certModalImg = document.getElementById('certModalImg');
-                const closeCertModal = document.getElementById('closeCertModal');
-                
-                // Get all certificate images
-                const certImages = document.querySelectorAll('.cert-img');
-                
-                // Add click event to each certificate image
-                certImages.forEach(function(img) {
-                    img.addEventListener('click', function() {
-                        certModal.style.display = 'block';
-                        certModalImg.src = this.src;
-                    });
-                });
-                
-                // Close modal when clicking the X button
-                closeCertModal.addEventListener('click', function() {
-                    certModal.style.display = 'none';
-                });
-                
-                // Close modal when clicking outside the image
-                certModal.addEventListener('click', function(event) {
-                    if (event.target === certModal) {
-                        certModal.style.display = 'none';
-                    }
-                });
-                
-                // Close modal with Escape key
-                document.addEventListener('keydown', function(event) {
-                    if (event.key === 'Escape' && certModal.style.display === 'block') {
-                        certModal.style.display = 'none';
-                    }
-                });
-            });
-        </script>
-        
-    </body>
+        </section>
+        <!-- /Features Services -->
+
+		<!-- Partners Section -->
+		<section class="blog-section pt-0">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center aos " data-aos="fade-up">
+						<div class="section-heading">
+							<h2>Technical Skills</h2>
+							<p>Technologies and tools I have experience working with.</p>
+						</div>
+					</div>
+					<div class="owl-carousel partners-slider aos " data-aos="fade-up">
+						<div class="partner-img">
+							<img src="assets/img/partner/1.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/2.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/3.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/4.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/5.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/6.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/7.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/8.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/9.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/10.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/11.png" alt="img">
+						</div>
+						<div class="partner-img">
+							<img src="assets/img/partner/12.png" alt="img">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Partners Section -->
+
+		<!-- App Section -->
+		<section class="app-section">
+
+			<div class="container">
+				<div class="app-sec">
+					<div class="row">
+
+						<div class="col-lg-6 col-12">
+							<div class="col-md-12">
+								<div class="heading aos" data-aos="fade-up">
+									<h2>Let's Connect</h2>
+
+									<p>
+										Thank you for taking the time to explore my portfolio.
+										Feel free to reach out if you would like to connect,
+										discuss opportunities, or learn more about my experience.
+									</p>
+
+									<h6>Feel free to get in touch with me</h6>
+								</div>
+							</div>
+
+							<div class="downlaod-btn aos" data-aos="fade-up">
+								<a href="#" target="_blank">
+									<img src="assets/img/icons/wa.png" alt="WhatsApp" width="150px" height="65px">
+								</a>
+							</div>
+						</div>
+
+						<div class="col-lg-6 col-12">
+							<div class="appimg-set aos" data-aos="fade-up">
+								<img src="assets/img/close.png" class="img-fluid" alt="Contact Me" style="margin-top: 70px;">
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<!-- /App Section -->
+		
+		<!-- Footer -->
+		<footer class="footer">
+		
+			<!-- Footer Top -->
+			<div class="footer-top aos" data-aos="fade-up">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget">
+								<div class="footer-content">
+									<p>
+										Fresh Informatics graduate with experience in technology, full stack development, 
+										and various academic projects. Passionate about learning, solving problems, 
+										and exploring new opportunities in the technology field.
+									</p>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-2 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-menu">
+								<h2 class="footer-title">Quick Links</h2>
+								<ul>
+									<li>
+										<a href="about-us.html">About Me</a>
+									</li>
+									<li>
+										<a href="blog-grid.html">Education</a>
+									</li>
+									<li>
+										<a href="contact-us.html">Experience</a>
+									</li>
+									<li>
+										<a href="provider-signup.html">Projects</a>
+									</li>
+									<li>
+										<a href="user-signup.html">Certificates</a>
+									</li>
+									<li>
+										<a href="user-signup.html">Contact</a>
+									</li>
+								</ul>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget footer-contact">
+								<h2 class="footer-title">Contact Us</h2>
+								<div class="footer-contact-info">
+									<div class="footer-address">
+										<p><span><i class="feather-map-pin"></i></span> Cimahi, West Java, Indonesia</p>
+									</div>
+									<p><span><i class="feather-phone"></i></span> +62 895-6339-96833</p>
+									<p class="mb-0"><span><i class="feather-mail"></i></span> ardifjr27@gmail.com</p>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+						<div class="col-lg-3 col-md-6">
+							<!-- Footer Widget -->
+							<div class="footer-widget">
+								<h2 class="footer-title">Follow Me</h2>
+								<div class="social-icon">
+									<ul>
+										<li>
+											<a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fab fa-github"></i> </a>
+										</li>
+										<li>
+											<a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- /Footer Widget -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /Footer Top -->
+			
+			<!-- Footer Bottom -->
+			<div class="footer-bottom">
+				<div class="container">
+					<!-- Copyright -->
+					<div class="copyright">
+						<div class="row align-items-center">
+							<div class="col-md-4">
+								<div class="copyright-text">
+									<p class="mb-0">Copyright &copy; <span id="current-year"></span>. All Rights Reserved.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Copyright -->
+				</div>
+			</div>
+			<!-- /Footer Bottom -->
+			
+		</footer>
+		<!-- /Footer -->
+		
+		<!-- Cursor -->
+		<div class="mouse-cursor cursor-outer"></div>
+		<div class="mouse-cursor cursor-inner"></div>
+		<!-- /Cursor -->	
+		
+		<!-- Delete Account -->
+		<div class="modal fade custom-modal" id="del-account">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header border-bottom-0 justify-content-between">
+						<h5 class="modal-title">Delete Account</h5>
+						<button type="button" class="close-btn" data-bs-dismiss="modal" aria-label="Close"><i class="feather-x"></i></button>
+					</div>
+					<div class="modal-body pt-0">
+						<div class="write-review">
+							<form action="login.html">
+								<p>Are you sureyou want to delete This Account? To delete your account, Type your password.</p>
+								<div class="form-group">
+									<label class="col-form-label">Password</label>
+									<div class="pass-group">
+										<input type="password" class="form-control pass-input" placeholder="*************">
+										<span class="toggle-password feather-eye"></span>
+									</div>
+								</div>
+								<div class="modal-submit text-end">
+									<a href="#" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</a>
+									<button type="submit" class="btn btn-danger">Delete Account</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Delete Account -->
+		
+	</div>
+	
+	
+	<!-- scrollToTop start -->
+	<div class="progress-wrap active-progress">
+		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+		<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919px, 307.919px; stroke-dashoffset: 228.265px;"></path>
+		</svg>
+	</div>
+	<!-- scrollToTop end -->
+	
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.6.1.min.js"></script>
+
+	<!-- Bootstrap Core JS -->
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Fearther JS -->
+	<script src="assets/js/feather.min.js"></script>
+		
+	<!-- Owl Carousel JS -->
+	<script src="assets/js/owl.carousel.min.js"></script>
+
+	<!-- select JS -->
+	<script src="assets/plugins/select2/js/select2.min.js"></script>
+	
+	<!-- Aos -->
+	<script src="assets/plugins/aos/aos.js"></script>
+	
+	<!-- Top JS -->
+	<script src="assets/js/backToTop.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/script.js"></script>
+	<script>
+		document.getElementById('current-year').textContent = new Date().getFullYear();
+	</script>
+	
+</body>
 </html>
