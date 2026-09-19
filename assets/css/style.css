@@ -2709,6 +2709,10 @@ html.menu-opened body {
 }
 .projects-slider .owl-stage {
 	display: flex;
+	transition-timing-function: linear !important;
+}
+.features-four-slider:not(.projects-slider) .owl-stage {
+	transition-timing-function: linear !important;
 }
 .projects-slider .owl-item {
 	display: flex;

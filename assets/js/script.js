@@ -243,8 +243,8 @@ Version      : 1.0
 	}
 
 	// Catering Feature slider
-	if ($('.owl-carousel.features-four-slider').length > 0) {
-		$('.owl-carousel.features-four-slider').owlCarousel({
+	if ($('.owl-carousel.features-four-slider:not(.projects-slider)').length > 0) {
+		$('.owl-carousel.features-four-slider:not(.projects-slider)').owlCarousel({
 			loop: true,
 			margin: 24,
 			nav: false,
@@ -271,11 +271,42 @@ Version      : 1.0
 		})
 	}
 
-	$('.owl-carousel.projects-slider').on('initialized.owl.carousel', function () {
-		$(this).trigger('play.owl.autoplay', [4000]);
-	}).on('drag.owl.carousel click', function () {
-		$(this).trigger('stop.owl.autoplay');
-	});
+	if ($('.owl-carousel.projects-slider').length > 0) {
+    	var $projectsSlider = $('.owl-carousel.projects-slider');
+			$projectsSlider.owlCarousel({
+			loop: true,
+            margin: 24,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: false,
+            mouseDrag: true,
+            touchDrag: true,
+            pullDrag: true,
+            smartSpeed: 15000,
+            autoplaySpeed: 15000,
+            slideTransition: 'linear',
+			responsive: {
+				0: {
+					items: 1
+				},
+				550: {
+					items: 1
+				},
+				700: {
+					items: 2
+				},
+				1200: {
+					items: 3
+				},
+				1400: {
+					items: 3
+				}
+			}
+		});
+		$projectsSlider.trigger('next.owl.carousel');
+	}
 
 	//for slider
 	$(window).on('load resize', function () {
