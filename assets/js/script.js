@@ -220,7 +220,6 @@ Version      : 1.0
 			margin: 24,
 			nav: false,
 			dots: true,
-			smartSpeed: 2000,
 			responsive: {
 				0: {
 					items: 1
@@ -244,31 +243,33 @@ Version      : 1.0
 
 	// Catering Feature slider
 	if ($('.owl-carousel.features-four-slider:not(.projects-slider)').length > 0) {
-		$('.owl-carousel.features-four-slider:not(.projects-slider)').owlCarousel({
+		var $cateringSlider = $('.owl-carousel.features-four-slider:not(.projects-slider)');
+
+		$cateringSlider.owlCarousel({
 			loop: true,
 			margin: 24,
 			nav: false,
 			dots: true,
-			smartSpeed: 2000,
+			autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: false,
+            mouseDrag: true,
+            touchDrag: true,
+            pullDrag: true,
+            smartSpeed: 23000,
+            autoplaySpeed: 23000,
+            slideTransition: 'linear',
 			responsive: {
-				0: {
-					items: 1
-				},
-
-				550: {
-					items: 1
-				},
-				700: {
-					items: 2
-				},
-				1200: {
-					items: 3
-				},
-				1400: {
-					items: 3
-				}
+				0: { items: 1 },
+				550: { items: 1 },
+				700: { items: 2 },
+				1200: { items: 3 },
+				1400: { items: 3 }
 			}
-		})
+		});
+
+		// langsung gerak begitu ke-init, ga nunggu 4 detik pertama
+		$cateringSlider.trigger('next.owl.carousel');
 	}
 
 	if ($('.owl-carousel.projects-slider').length > 0) {
@@ -284,8 +285,8 @@ Version      : 1.0
             mouseDrag: true,
             touchDrag: true,
             pullDrag: true,
-            smartSpeed: 15000,
-            autoplaySpeed: 15000,
+            smartSpeed: 25000,
+            autoplaySpeed: 25000,
             slideTransition: 'linear',
 			responsive: {
 				0: {

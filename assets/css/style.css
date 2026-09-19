@@ -3245,6 +3245,10 @@ html.menu-opened body {
 	margin-top: -128px;
 	position: relative;
 }
+.contact-image {
+	margin-top: 60px;
+	margin-bottom: -90px;
+}
 .scan-img {
 	position: relative;
 	background: #fff;
@@ -20463,6 +20467,9 @@ fieldset {
 	}
 	.appimg-set img {
 		max-width: 100%;
+	}
+	.contact-image {
+		margin-bottom: 0;
 	}
 	.app-sec:before {
 		content: none;
