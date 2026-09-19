@@ -985,19 +985,24 @@ Version      : 1.0
 		})
 	}
 
-	// Service slider 
 	if ($('.owl-carousel.partners-slider').length > 0) {
-		$('.owl-carousel.partners-slider').owlCarousel({
+		var $partnersSlider = $('.owl-carousel.partners-slider');
+
+		$partnersSlider.owlCarousel({
 			loop: true,
-			margin: 24,
+			margin: 30,
 			nav: false,
 			dots: false,
-			smartSpeed: 2000,
+			autoplay: true,
+			autoplayTimeout: 5000,    
+			autoplaySpeed: 5000,
+			smartSpeed: 5000,
+			slideTransition: 'linear',
+			autoplayHoverPause: true,
 			responsive: {
 				0: {
 					items: 1
 				},
-
 				550: {
 					items: 2
 				},
@@ -1011,9 +1016,11 @@ Version      : 1.0
 					items: 5
 				}
 			}
-		})
+		});
+
+		$partnersSlider.trigger('next.owl.carousel');
 	}
-	// Service slider 
+	
 	if ($('.owl-carousel.partners-slider-seven').length > 0) {
 		$('.owl-carousel.partners-slider-seven').owlCarousel({
 			loop: true,
