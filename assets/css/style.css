@@ -2712,7 +2712,25 @@ html.menu-opened body {
 	transition-timing-function: linear !important;
 }
 .features-four-slider:not(.projects-slider) .owl-stage {
+	display: flex;
 	transition-timing-function: linear !important;
+}
+.features-four-slider:not(.projects-slider) .owl-item {
+	display: flex;
+}
+.features-four-slider:not(.projects-slider) .service-widget.service-two {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+.features-four-slider:not(.projects-slider) .service-four-content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+}
+.features-four-slider:not(.projects-slider) .service-four-content .serv-info {
+	margin-top: auto;
 }
 .projects-slider .owl-item {
 	display: flex;
@@ -2733,6 +2751,16 @@ html.menu-opened body {
 	white-space: normal;
 	overflow: visible;
 	text-overflow: clip;
+}
+.projects-slider .service-content > p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.features-four-slider:not(.projects-slider) .service-content.service-four-content > p:last-of-type {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 @media (max-width: 767px) {
 	.service-grid {
@@ -21165,7 +21193,12 @@ fieldset {
 		display: none;
 	}
 	.about-eight-main {
-		display: none;
+		display: block;
+		margin-top: 25px;
+		text-align: center;
+	}
+	.about-eight-main > img {
+		max-width: 85%;
 	}
 	.professional-eight-img {
 		display: none;
