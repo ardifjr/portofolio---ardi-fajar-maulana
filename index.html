@@ -104,16 +104,16 @@
 							<a href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a>
 						</li> -->
 						<li>
-							<a href="javascript:void(0)"><i class="fa-brands fa-linkedin"></i></a>
+							<a href="https://www.linkedin.com/in/ardi-fajar-maulana-996879282" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
 						</li>
 						<li>
-							<a href="javascript:void(0)"><i class="fa-brands fa-github"></i></a>
+							<a href="https://github.com/ardifjr" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
 						</li>
 						<!-- <li>
 							<a href="javascript:void(0)"><i class="fa-brands fa-twitter"></i></a>
 						</li> -->
 						<li>
-							<a href="javascript:void(0)"><i class="fa-brands fa-whatsapp"></i></a>
+							<a href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -137,7 +137,7 @@
 								database management, and data analytics. Passionate about technology and continuously
 								learning to build meaningful digital experiences.</p>
 								<div class="search-box-two search-box-six">
-									<a class="btn search-btn search_service" href="contact.html">Contact Me</a>
+									<a class="btn search-btn search_service" href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer">Contact Me</a>
 								</div>
 							</div>
 						</div>
@@ -1073,7 +1073,7 @@
 							</div>
 
 							<div class="downlaod-btn aos" data-aos="fade-up">
-								<a href="#" target="_blank">
+								<a href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer">
 									<img src="assets/img/icons/wa.png" alt="WhatsApp" width="150px" height="65px">
 								</a>
 							</div>
@@ -1160,13 +1160,13 @@
 								<div class="social-icon">
 									<ul>
 										<li>
-											<a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> </a>
+											<a href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i> </a>
 										</li>
 										<li>
-											<a href="#" target="_blank"><i class="fab fa-github"></i> </a>
+											<a href="https://github.com/ardifjr" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> </a>
 										</li>
 										<li>
-											<a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+											<a href="https://www.linkedin.com/in/ardi-fajar-maulana-996879282" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
 										</li>
 									</ul>
 								</div>
@@ -1203,6 +1203,16 @@
 		<div class="mouse-cursor cursor-outer"></div>
 		<div class="mouse-cursor cursor-inner"></div>
 		<!-- /Cursor -->	
+
+		<!-- Portfolio Detail Modal -->
+		<div class="portfolio-detail-modal" id="portfolio-detail-modal" role="dialog" aria-modal="true" aria-labelledby="portfolio-detail-title">
+			<div class="portfolio-detail-overlay" data-portfolio-close></div>
+			<div class="portfolio-detail-dialog">
+				<button type="button" class="portfolio-detail-close" data-portfolio-close aria-label="Close details">&times;</button>
+				<div class="portfolio-detail-content" id="portfolio-detail-content"></div>
+			</div>
+		</div>
+		<!-- /Portfolio Detail Modal -->
 		
 		<!-- Delete Account -->
 		<div class="modal fade custom-modal" id="del-account">
@@ -1270,6 +1280,67 @@
 	<!-- Custom JS -->
 	<script src="assets/js/script.js"></script>
 	<script>
+		(function () {
+			const modal = document.getElementById('portfolio-detail-modal');
+			const modalContent = document.getElementById('portfolio-detail-content');
+			const portfolioCards = document.querySelectorAll('#projects .service-widget, #certificate .service-widget');
+
+			if (!modal || !modalContent || !portfolioCards.length) {
+				return;
+			}
+
+			function closePortfolioModal() {
+				modal.classList.remove('is-open');
+				document.body.classList.remove('portfolio-modal-open');
+				modalContent.innerHTML = '';
+			}
+
+			function openPortfolioModal(card) {
+				const image = card.querySelector('.service-img img');
+				const content = card.querySelector('.service-content');
+
+				if (!content) {
+					return;
+				}
+
+				modalContent.innerHTML = '';
+				if (image) {
+					const modalImage = image.cloneNode(true);
+					modalImage.className = 'portfolio-detail-image';
+					modalContent.appendChild(modalImage);
+				}
+
+				const modalText = content.cloneNode(true);
+				const title = modalText.querySelector('.title');
+				if (title) {
+					title.id = 'portfolio-detail-title';
+				}
+				modalContent.appendChild(modalText);
+				modal.classList.add('is-open');
+				document.body.classList.add('portfolio-modal-open');
+			}
+
+			portfolioCards.forEach(function (card) {
+				card.classList.add('portfolio-card');
+				card.addEventListener('click', function (event) {
+					event.preventDefault();
+					openPortfolioModal(card);
+				});
+			});
+
+			modal.addEventListener('click', function (event) {
+				if (event.target.hasAttribute('data-portfolio-close')) {
+					closePortfolioModal();
+				}
+			});
+
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+					closePortfolioModal();
+				}
+			});
+		})();
+
 		document.getElementById('current-year').textContent = new Date().getFullYear();
 	</script>
 	
