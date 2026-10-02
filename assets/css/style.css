@@ -2866,6 +2866,82 @@ html.menu-opened body {
 		grid-template-columns: 1fr;
 	}
 }
+.projects-grid,
+.certificate-grid {
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	align-items: stretch;
+}
+.projects-grid .service-img {
+	height: 550px;
+}
+.projects-grid .service-img .serv-img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.certificate-grid .service-widget {
+	display: flex;
+	flex-direction: column;
+}
+.certificate-grid .service-four-img {
+	height: 220px;
+	background: #fff;
+}
+.certificate-grid .service-four-img::before {
+	display: none;
+}
+.certificate-grid .service-four-img .serv-img {
+	width: 100%;
+	height: 100%;
+	padding: 8px;
+	background: #fff;
+	object-fit: contain;
+}
+.certificate-grid .service-four-content {
+	flex: 1;
+	padding: 18px 12px 0;
+}
+.technical-skills-grid {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	gap: 16px;
+}
+.technical-skills-grid .partner-img {
+	display: flex;
+	min-width: 0;
+	min-height: 88px;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 0;
+}
+.technical-skills-grid .partner-img img {
+	max-width: 100%;
+	height: 42px;
+	object-fit: contain;
+}
+@media (max-width: 991px) {
+	.projects-grid,
+	.certificate-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+	.technical-skills-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+@media (max-width: 767px) {
+	.technical-skills-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+@media (max-width: 575px) {
+	.projects-grid,
+	.certificate-grid {
+		grid-template-columns: 1fr;
+	}
+	.technical-skills-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
 .service-widget:hover {
     box-shadow: 0px 10px 20px -5px rgb(76 64 237 / 8%);
 }
@@ -18996,6 +19072,14 @@ fieldset {
     position: relative;
     padding-left: 30px;
     margin-bottom: 22px;
+}
+.footer-contact-info p.footer-profile-link {
+	padding-left: 0;
+	margin-bottom: 10px;
+}
+.footer-profile-link a {
+	color: inherit;
+	text-decoration: underline;
 }
 .footer-contact-info span {
 	position: absolute;
