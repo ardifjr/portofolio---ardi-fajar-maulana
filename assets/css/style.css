@@ -145,6 +145,9 @@ section[id] {
 
 .portfolio-detail-content .service-content .title {
 	margin-bottom: 12px;
+	white-space: normal;
+	overflow: visible;
+	text-overflow: clip;
 }
 
 .portfolio-detail-content .service-content p {

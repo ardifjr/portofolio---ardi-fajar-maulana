@@ -1314,6 +1314,10 @@
 				const title = modalText.querySelector('.title');
 				if (title) {
 					title.id = 'portfolio-detail-title';
+					const titleLink = title.querySelector('a');
+					if (titleLink) {
+						title.textContent = titleLink.textContent.trim();
+					}
 				}
 				modalContent.appendChild(modalText);
 				modal.classList.add('is-open');
