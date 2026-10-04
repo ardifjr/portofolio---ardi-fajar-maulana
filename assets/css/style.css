@@ -147,7 +147,10 @@ section[id] {
 	margin-bottom: 12px;
 }
 
-.portfolio-detail-content .service-content p {
+.portfolio-detail-content .service-content .title,
+.portfolio-detail-content .service-content .title a,
+.portfolio-detail-content .service-content p,
+.portfolio-detail-content .service-content li {
 	white-space: normal;
 	overflow: visible;
 	text-overflow: clip;
@@ -2870,6 +2873,12 @@ html.menu-opened body {
 .certificate-grid {
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	align-items: stretch;
+}
+.projects-grid .service-content .title,
+.projects-grid .service-content .title a {
+	white-space: normal;
+	overflow: visible;
+	text-overflow: clip;
 }
 .projects-grid .service-img {
 	height: 550px;

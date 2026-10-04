@@ -1271,6 +1271,9 @@
 				}
 
 				const modalText = content.cloneNode(true);
+				modalText.querySelectorAll('a').forEach(function (link) {
+					link.replaceWith(...link.childNodes);
+				});
 				const title = modalText.querySelector('.title');
 				if (title) {
 					title.id = 'portfolio-detail-title';
@@ -1281,6 +1284,9 @@
 			}
 
 			portfolioCards.forEach(function (card) {
+				card.querySelectorAll('.serv-info').forEach(function (details) {
+					details.remove();
+				});
 				card.classList.add('portfolio-card');
 				card.addEventListener('click', function (event) {
 					event.preventDefault();
