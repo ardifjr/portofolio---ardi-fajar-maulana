@@ -15298,6 +15298,9 @@ fieldset {
     opacity: 0.9;
     z-index: 1
 }
+#certificate .service-four-img::before {
+	opacity: 0.45;
+}
 .service-widget.service-two .service-content.service-four-content .service-cater-bottom {
 	color: #2A396D;
 }
