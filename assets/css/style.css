@@ -2869,6 +2869,29 @@ html.menu-opened body {
 		grid-template-columns: 1fr;
 	}
 }
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+	#experience .service-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+#experience .service-widget .fav-item > a {
+	display: block;
+	flex: 1 1 100%;
+	max-width: 100%;
+	min-width: 0;
+	width: 100%;
+}
+
+#experience .service-widget .item-cat {
+	box-sizing: border-box;
+	display: block;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	white-space: normal;
+}
+
 .service-widget:hover {
     box-shadow: 0px 10px 20px -5px rgb(76 64 237 / 8%);
 }
@@ -20115,6 +20138,14 @@ fieldset {
 @media only screen and (max-width: 991.98px) {
 	.sidebar-overlay.opened {
 		display: block;
+	}
+	.search-box-two.search-box-six {
+		display: flex;
+		justify-content: center;
+		margin: 0 auto;
+	}
+	.search-box-two.search-box-six .search-btn {
+		float: none;
 	}
 	.header-navbar-rht > li {
 		padding-right: 15px;
