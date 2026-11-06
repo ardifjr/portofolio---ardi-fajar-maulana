@@ -29,6 +29,120 @@
 
 	<!-- Main CSS -->
 	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		.language-switcher {
+			align-items: center;
+			display: flex !important;
+			margin-left: 12px;
+			position: relative;
+		}
+
+		.language-toggle {
+			align-items: center;
+			background: linear-gradient(135deg, #f3f0ff, #fff);
+			border: 1px solid rgba(76, 64, 237, 0.18);
+			border-radius: 999px;
+			box-shadow: 0 5px 16px rgba(76, 64, 237, 0.1);
+			color: #4c40ed;
+			cursor: pointer;
+			display: inline-flex;
+			font: inherit;
+			font-size: 13px;
+			font-weight: 700;
+			gap: 8px;
+			justify-content: center;
+			min-height: 40px;
+			padding: 0 14px;
+			transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, transform 0.2s ease;
+		}
+
+		.language-toggle:hover,
+		.language-toggle[aria-expanded="true"] {
+			background: #4c40ed;
+			box-shadow: 0 8px 20px rgba(76, 64, 237, 0.22);
+			color: #fff;
+			transform: translateY(-1px);
+		}
+
+		.language-chevron {
+			font-size: 10px;
+			transition: transform 0.2s ease;
+		}
+
+		.language-toggle[aria-expanded="true"] .language-chevron {
+			transform: rotate(180deg);
+		}
+
+		.language-dropdown {
+			background: #fff;
+			border: 1px solid #eeecf8;
+			border-radius: 14px;
+			box-shadow: 0 16px 40px rgba(40, 40, 60, 0.16);
+			min-width: 190px;
+			padding: 7px;
+			position: absolute;
+			right: 0;
+			top: calc(100% + 10px);
+			z-index: 1200;
+		}
+
+		.language-dropdown[hidden] {
+			display: none !important;
+		}
+
+		.language-option {
+			align-items: center;
+			background: transparent;
+			border: 0;
+			border-radius: 9px;
+			color: #28283c;
+			cursor: pointer;
+			display: flex;
+			font: inherit;
+			font-size: 13px;
+			justify-content: space-between;
+			padding: 10px 11px;
+			text-align: left;
+			transition: background 0.2s ease, color 0.2s ease;
+			width: 100%;
+		}
+
+		.language-option:hover,
+		.language-option.is-selected {
+			background: #f3f0ff;
+			color: #4c40ed;
+		}
+
+		.language-code {
+			color: #89879b;
+			font-size: 11px;
+			font-weight: 700;
+			letter-spacing: 0.06em;
+		}
+
+		@media (max-width: 991.98px) {
+			.language-switcher {
+				align-items: flex-start;
+				margin: 8px 20px 14px;
+				padding-bottom: 14px;
+			}
+
+			.language-toggle {
+				min-width: 92px;
+			}
+
+			.language-dropdown {
+				left: 0;
+				right: auto;
+			}
+		}
+
+		@media (max-width: 360px) {
+			.language-switcher {
+				margin-left: 14px;
+			}
+		}
+	</style>
 	
 </head>
 
@@ -62,26 +176,41 @@
 						</div>
 						<ul class="main-nav" style="margin-left: auto; margin-right: 0; display: flex; justify-content: flex-end; width: 100%;">
 							<li class="has-submenu">
-								<a href="#home">Home</a>
+								<a href="#home" data-i18n="nav.home">Home</a>
 							</li>
 							<li>
-								<a href="#about">About Me</a>
+								<a href="#about" data-i18n="nav.about">About Me</a>
                             </li>
                             <li>
-								<a href="#education">Education</a>
+								<a href="#education" data-i18n="nav.education">Education</a>
                             </li>
                             <li>
-								<a href="#experience">Experience</a>
+								<a href="#experience" data-i18n="nav.experience">Experience</a>
                             </li>
                             <li>
-								<a href="#projects">Projects</a>
+								<a href="#projects" data-i18n="nav.projects">Projects</a>
                             </li>
                             <li>
-								<a href="#certificate">Certificate</a>
+								<a href="#certificate" data-i18n="nav.certificate">Certificate</a>
                             </li>
                             <li>
-								<a href="#contact">Contact</a>
+								<a href="#contact" data-i18n="nav.contact">Contact</a>
                             </li>
+							<li class="language-switcher">
+								<button class="language-toggle" id="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">
+									<i class="fas fa-globe" aria-hidden="true"></i>
+									<span id="current-language">EN</span>
+									<i class="fas fa-chevron-down language-chevron" aria-hidden="true"></i>
+								</button>
+								<div class="language-dropdown" id="language-dropdown" role="group" aria-label="Choose language" hidden>
+									<button type="button" class="language-option is-selected" data-language="en" aria-pressed="true">
+										<span>English</span><span class="language-code">EN</span>
+									</button>
+									<button type="button" class="language-option" data-language="id" aria-pressed="false">
+										<span>Bahasa Indonesia</span><span class="language-code">ID</span>
+									</button>
+								</div>
+							</li>
 						</ul>
 					</div>
 					<ul class="nav header-navbar-rht">
@@ -130,14 +259,14 @@
 						<div class="col-lg-6 col-12">
 							<div class="home-banner-six-bottom">
 								<div class="home-banner-six-detergent">
-									<h5>HELLO, I'M ARDI</h5>
+									<h5 data-i18n="hero.greeting">HELLO, I'M ARDI</h5>
 								</div>
-								<h1>Ardi Fajar Maulana <span>Informatics Graduate</span></h1>
-								<p>Fresh graduate in Informatics with experience in full stack web development, 
+								<h1>Ardi Fajar Maulana <span data-i18n="hero.title">Informatics Graduate</span></h1>
+								<p data-i18n="hero.intro">Fresh graduate in Informatics with experience in full stack web development,
 								database management, and data analytics. Passionate about technology and continuously
 								learning to build meaningful digital experiences.</p>
 								<div class="search-box-two search-box-six">
-									<a class="btn search-btn search_service" href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer">Contact Me</a>
+									<a class="btn search-btn search_service" href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer" data-i18n="hero.contact">Contact Me</a>
 								</div>
 							</div>
 						</div>
@@ -157,9 +286,9 @@
 					<div class="col-lg-6 col-12">
 						<div class="passion-eight-all">
 							<div class="section-heading section-heading-eight passion-eight-heading aos" data-aos="fade-up">
-								<h2>About Me</h2>
+								<h2 data-i18n="section.about">About Me</h2>
 							</div>
-							<p>I am a fresh Informatics graduate from Institut Teknologi Nasional Bandung
+							<p data-i18n="about.intro">I am a fresh Informatics graduate from Institut Teknologi Nasional Bandung
 							with a GPA of 3.76/4.00 and Summa Cum Laude honors. With experience in full stack 
 							web development through professional, internship, and academic projects, 
 							I am passionate about pursuing a career in technology and software development. 
@@ -211,7 +340,7 @@
 				<div class="row">
 					<div class="col-md-12 text-center">
 						<div class="section-heading aos" data-aos="fade-up">
-							<h2>Education</h2>
+							<h2 data-i18n="section.education">Education</h2>
 							<p></p>
 						</div>
 					</div>
@@ -235,8 +364,8 @@
 										<i class="fas fa-star filled"></i>
 										<i class="fas fa-star filled"></i>
 									</div> -->
-									<p>Bachelor of Informatics — GPA: 3.76/4.00, Summa Cum Laude, Excellent Accreditation</p>
-									<p>Relevant Coursework: Programming, Databases, Software Engineering, Artificial Intelligence, Data Analytics, Web Application Development</p>
+									<p data-i18n="education.degree">Bachelor of Informatics — GPA: 3.76/4.00, Summa Cum Laude, Excellent Accreditation</p>
+									<p data-i18n="education.courses">Relevant Coursework: Programming, Databases, Software Engineering, Artificial Intelligence, Data Analytics, Web Application Development</p>
 								</div>
 							</div>
 							<div class="client-widget aos" data-aos="fade-up">
@@ -255,8 +384,8 @@
 										<i class="fas fa-star filled"></i>
 										<i class="fas fa-star filled"></i>
 									</div> -->
-									<p>Software Engineering — Final Diploma Average: 84.12, Eligible Student</p>
-									<p>Relevant Coursework: Basic Programming, Databases, Web Programming, Object-Oriented Programming, Software Development</p>
+									<p data-i18n="education.diploma">Software Engineering — Final Diploma Average: 84.12, Eligible Student</p>
+									<p data-i18n="education.diplomaCourses">Relevant Coursework: Basic Programming, Databases, Web Programming, Object-Oriented Programming, Software Development</p>
 								</div>
 							</div>
 						</div>
@@ -272,8 +401,8 @@
 				<div class="section-heading">
 					<div class="row">
 						<div class="col-md-6 aos" data-aos="fade-up">						
-							<h2>Experience</h2>
-							<p>
+							<h2 data-i18n="section.experience">Experience</h2>
+							<p data-i18n="experience.intro">
 								My experience in technology through professional work, internships, academic projects, and teaching assistance.
 							</p>
 						</div>
@@ -342,7 +471,7 @@
 									<h3 class="title">
 										<a href="service-details.html">Dinas Lingkungan Hidup Cimahi</a>
 									</h3>
-									<p>Okt 2024 - Feb 2025<span class="rate"></p>
+									<p>Oct 2024 - Feb 2025<span class="rate"></p>
 									<div class="serv-info">
 										<p>Developed an industrial pollution monitoring website from the ground up, contributing to database design as well as backend and frontend development. Designed the interface to make monitoring information easier to access and manage, and connected the data structure with the application features needed to support the monitoring workflow. This work helped provide environmental officers with a more organized way to review information and manage industrial monitoring data through a single web platform.</p>
 									</div>
@@ -424,8 +553,8 @@
 				<div class="section-heading">
 					<div class="row">
 						<div class="col-md-6 aos" data-aos="fade-up">
-							<h2>Projects</h2>
-							<p>A collection of projects I have worked on throughout my academic and professional journey.</p>
+							<h2 data-i18n="section.projects">Projects</h2>
+							<p data-i18n="projects.intro">A collection of projects I have worked on throughout my academic and professional journey.</p>
 						</div>
 					</div>
 				</div>
@@ -687,8 +816,8 @@
                 <div class="section-heading section-heading-four">
                     <div class="row align-items-center">
                         <div class="col-md-6 aos" data-aos="fade-up">
-                            <h2>Certificate</h2>
-							<p>A collection of training and certifications that reflect my learning and development in technology.</p>                        </div>
+                            <h2 data-i18n="section.certificate">Certificate</h2>
+                            <p data-i18n="certificate.intro">A collection of training and certifications that reflect my learning and development in technology.</p>                        </div>
                         <div class="col-md-6 text-md-end aos" data-aos="fade-up">
                         </div>
                     </div>
@@ -996,8 +1125,8 @@
 				<div class="row">
 					<div class="col-md-12 text-center aos " data-aos="fade-up">
 						<div class="section-heading">
-							<h2>Technical Skills</h2>
-							<p>Technologies and tools I have experience working with.</p>
+							<h2 data-i18n="section.skills">Technical Skills</h2>
+							<p data-i18n="skills.intro">Technologies and tools I have experience working with.</p>
 						</div>
 					</div>
 					<div class="owl-carousel partners-slider aos " data-aos="fade-up">
@@ -1053,15 +1182,15 @@
 						<div class="col-lg-6 col-12">
 							<div class="col-md-12">
 								<div class="heading aos" data-aos="fade-up">
-									<h2>Let's Connect</h2>
+									<h2 data-i18n="section.contact">Let's Connect</h2>
 
-									<p>
+									<p data-i18n="contact.intro">
 										Thank you for taking the time to explore my portfolio.
 										Feel free to reach out if you would like to connect,
 										discuss opportunities, or learn more about my experience.
 									</p>
 
-									<h6>Feel free to get in touch with me</h6>
+									<h6 data-i18n="contact.prompt">Feel free to get in touch with me</h6>
 								</div>
 							</div>
 
@@ -1096,7 +1225,7 @@
 							<!-- Footer Widget -->
 							<div class="footer-widget">
 								<div class="footer-content">
-									<p>
+									<p data-i18n="footer.intro">
 										Fresh Informatics graduate with experience in technology, full stack development, 
 										and various academic projects. Passionate about learning, solving problems, 
 										and exploring new opportunities in the technology field.
@@ -1108,25 +1237,25 @@
 						<div class="col-lg-2 col-md-6">
 							<!-- Footer Widget -->
 							<div class="footer-widget footer-menu">
-								<h2 class="footer-title">Quick Links</h2>
+								<h2 class="footer-title" data-i18n="footer.links">Quick Links</h2>
 								<ul>
 									<li>
-										<a href="#about">About Me</a>
+										<a href="#about" data-i18n="nav.about">About Me</a>
 									</li>
 									<li>
-										<a href="#education">Education</a>
+										<a href="#education" data-i18n="nav.education">Education</a>
 									</li>
 									<li>
-										<a href="#experience">Experience</a>
+										<a href="#experience" data-i18n="nav.experience">Experience</a>
 									</li>
 									<li>
-										<a href="#projects">Projects</a>
+										<a href="#projects" data-i18n="nav.projects">Projects</a>
 									</li>
 									<li>
-										<a href="#certificate">Certificates</a>
+										<a href="#certificate" data-i18n="nav.certificate">Certificates</a>
 									</li>
 									<li>
-										<a href="#contact">Contact</a>
+										<a href="#contact" data-i18n="nav.contact">Contact</a>
 									</li>
 								</ul>
 							</div>
@@ -1135,7 +1264,7 @@
 						<div class="col-lg-3 col-md-6">
 							<!-- Footer Widget -->
 							<div class="footer-widget footer-contact">
-								<h2 class="footer-title">Contact Us</h2>
+								<h2 class="footer-title" data-i18n="footer.contact">Contact Us</h2>
 								<div class="footer-contact-info">
 									<div class="footer-address">
 										<p><span><i class="feather-map-pin"></i></span> Cimahi, West Java, Indonesia</p>
@@ -1149,7 +1278,7 @@
 						<div class="col-lg-3 col-md-6">
 							<!-- Footer Widget -->
 							<div class="footer-widget">
-								<h2 class="footer-title">Follow Me</h2>
+								<h2 class="footer-title" data-i18n="footer.follow">Follow Me</h2>
 								<div class="social-icon">
 									<ul>
 										<li>
@@ -1273,6 +1402,249 @@
 	<!-- Custom JS -->
 	<script src="assets/js/script.js"></script>
 	<script>
+		(function () {
+			const translations = {
+				"nav.home": "Beranda",
+				"nav.about": "Tentang Saya",
+				"nav.education": "Pendidikan",
+				"nav.experience": "Pengalaman",
+				"nav.projects": "Proyek",
+				"nav.certificate": "Sertifikat",
+				"nav.contact": "Kontak",
+				"hero.greeting": "HALO, SAYA ARDI",
+				"hero.title": "Lulusan Informatika",
+				"hero.intro": "Lulusan Informatika dengan pengalaman dalam pengembangan web full stack, pengelolaan basis data, dan analisis data. Saya antusias dengan teknologi dan terus belajar untuk membangun pengalaman digital yang bermanfaat.",
+				"hero.contact": "Hubungi Saya",
+				"section.about": "Tentang Saya",
+				"section.education": "Pendidikan",
+				"section.experience": "Pengalaman",
+				"section.projects": "Proyek",
+				"section.certificate": "Sertifikat",
+				"section.skills": "Keahlian Teknis",
+				"section.contact": "Mari Terhubung",
+				"about.intro": "Saya lulusan Informatika dari Institut Teknologi Nasional Bandung dengan IPK 3,76/4,00 dan predikat Summa Cum Laude. Berpengalaman mengembangkan web full stack melalui pekerjaan profesional, magang, dan proyek akademik, saya antusias berkarier di bidang teknologi dan pengembangan perangkat lunak. Keahlian saya mencakup frontend, backend, pengelolaan basis data, pengembangan RESTful API, serta Python untuk analisis data dan machine learning.",
+				"education.degree": "Sarjana Informatika — IPK: 3,76/4,00, Summa Cum Laude, Akreditasi Unggul",
+				"education.courses": "Mata Kuliah Relevan: Pemrograman, Basis Data, Rekayasa Perangkat Lunak, Kecerdasan Buatan, Analisis Data, Pengembangan Aplikasi Web",
+				"education.diploma": "Rekayasa Perangkat Lunak — Nilai Akhir: 84,12, Siswa Memenuhi Syarat",
+				"education.diplomaCourses": "Mata Kuliah Relevan: Pemrograman Dasar, Basis Data, Pemrograman Web, Pemrograman Berorientasi Objek, Pengembangan Perangkat Lunak",
+				"experience.intro": "Pengalaman saya di bidang teknologi mencakup pekerjaan profesional, magang, proyek akademik, dan kegiatan asisten pengajar.",
+				"projects.intro": "Kumpulan proyek yang saya kerjakan selama perjalanan akademik dan profesional.",
+				"certificate.intro": "Kumpulan pelatihan dan sertifikasi yang mencerminkan proses belajar dan pengembangan saya di bidang teknologi.",
+				"skills.intro": "Teknologi dan alat yang pernah saya gunakan.",
+				"contact.intro": "Terima kasih telah meluangkan waktu untuk melihat portofolio saya. Silakan hubungi saya jika ingin berkenalan, membahas peluang, atau mengetahui lebih lanjut tentang pengalaman saya.",
+				"contact.prompt": "Jangan ragu untuk menghubungi saya",
+				"footer.intro": "Lulusan Informatika dengan pengalaman di bidang teknologi, pengembangan full stack, dan berbagai proyek akademik. Saya antusias untuk terus belajar, memecahkan masalah, dan menjajaki peluang baru di bidang teknologi.",
+				"footer.links": "Tautan Cepat",
+				"footer.contact": "Hubungi Saya",
+				"footer.follow": "Ikuti Saya"
+			};
+				const contentTranslations = {
+					"Bara Enterprise": "Bara Enterprise",
+					"PT Allin Karya Nusantara": "PT Allin Karya Nusantara",
+					"Dinas Lingkungan Hidup Cimahi": "Dinas Lingkungan Hidup Cimahi",
+					"Institut Teknologi Nasional Bandung": "Institut Teknologi Nasional Bandung",
+					"PT Multyartha Indo Daya": "PT Multyartha Indo Daya",
+					"Full Stack Web Developer Intern": "Magang Pengembang Web Full Stack",
+					"Full Stack Web Developer": "Pengembang Web Full Stack",
+					"Full Stack Intern": "Magang Full Stack",
+					"Database Programming Laboratory Assistant": "Asisten Laboratorium Pemrograman Basis Data",
+					"Basic Programming Laboratory Assistant": "Asisten Laboratorium Pemrograman Dasar",
+					"Sep 2021 - Nov 2021": "Sep 2021 - Nov 2021",
+					"Jun 2023 - Jul 2024": "Jun 2023 - Jul 2024",
+					"Oct 2024 - Feb 2025": "Okt 2024 - Feb 2025",
+					"Sep 2024 - Jan 2025": "Sep 2024 - Jan 2025",
+					"Mar 2026 – Apr 2026": "Mar 2026 – Apr 2026",
+					"Developed a café website with transaction management, database management, and integrated frontend and backend functionality. Contributed across the full development lifecycle, from designing the database structure and implementing core features to building the user interface. By bringing transaction workflows and data management into one system, the website helped make day-to-day café operations more organized and efficient. Focused on creating a practical, user-friendly experience for managing transactions and accessing business information.": "Saya mengembangkan situs web kafe dengan fitur pengelolaan transaksi dan basis data serta frontend dan backend yang terintegrasi. Saya terlibat dalam seluruh proses pengembangan, mulai dari merancang struktur basis data dan membangun fitur inti hingga membuat antarmuka pengguna. Dengan menyatukan alur transaksi dan pengelolaan data dalam satu sistem, situs ini membantu operasional harian kafe menjadi lebih teratur dan efisien. Saya berfokus menciptakan pengalaman yang praktis dan mudah digunakan untuk mengelola transaksi serta mengakses informasi bisnis.",
+					"Contributed to multiple client-facing web projects, taking features from development through deployment. Built the DPPKB Bandung government website to help present public information and services online, and developed ExamEdu, a civil service entrance exam preparation website, covering its design, feature implementation, and deployment. Also enhanced the Huma Consulting website by adding a driving license (SIM) test category. These projects strengthened my ability to adapt to different user needs, deliver end-to-end web solutions, and turn requirements into useful website features.": "Saya berkontribusi pada berbagai proyek web untuk klien, mulai dari pengembangan fitur hingga deployment. Saya membangun situs pemerintah DPPKB Bandung untuk menyajikan informasi publik dan layanan secara online, serta mengembangkan ExamEdu, situs persiapan ujian masuk aparatur sipil negara, mulai dari desain dan implementasi fitur hingga deployment. Saya juga meningkatkan situs Huma Consulting dengan menambahkan kategori tes surat izin mengemudi (SIM). Berbagai proyek ini mengasah kemampuan saya menyesuaikan solusi dengan kebutuhan pengguna dan mewujudkan kebutuhan menjadi fitur web yang bermanfaat.",
+					"Developed an industrial pollution monitoring website from the ground up, contributing to database design as well as backend and frontend development. Designed the interface to make monitoring information easier to access and manage, and connected the data structure with the application features needed to support the monitoring workflow. This work helped provide environmental officers with a more organized way to review information and manage industrial monitoring data through a single web platform.": "Saya mengembangkan situs pemantauan pencemaran industri dari awal, termasuk berkontribusi pada desain basis data serta pengembangan backend dan frontend. Saya merancang antarmuka agar informasi pemantauan lebih mudah diakses dan dikelola, serta menghubungkan struktur data dengan fitur aplikasi yang mendukung alur pemantauan. Pekerjaan ini membantu petugas lingkungan meninjau informasi dan mengelola data pemantauan industri dengan lebih teratur melalui satu platform web.",
+					"Guided students through database programming concepts, including ERD, TRD, DDS, database normalization, and SQL query implementation. Supported laboratory sessions by explaining course material, helping students work through practical exercises, and clarifying how database concepts are applied in practice. My contribution helped students build a stronger understanding of database design and develop confidence applying SQL and structured problem-solving to their assignments.": "Saya membimbing mahasiswa mempelajari pemrograman basis data, termasuk ERD, TRD, DDS, normalisasi, dan penerapan kueri SQL. Dalam sesi praktikum, saya menjelaskan materi, membantu mahasiswa mengerjakan latihan, serta menerangkan penerapan konsep basis data dalam praktik. Dukungan ini membantu mahasiswa memahami desain basis data dengan lebih baik dan lebih percaya diri menggunakan SQL serta pemecahan masalah terstruktur dalam tugas mereka.",
+					"Guided students in learning basic programming logic with Python, covering variables, control flow, functions, and debugging. Helped connect these fundamentals to practical Internet of Things (IoT) exercises using Raspberry Pi, supporting students as they applied code to hands-on activities and worked through errors. Through laboratory assistance and step-by-step explanations, I contributed to building students' programming confidence and a stronger foundation for solving problems with code.": "Saya membimbing mahasiswa mempelajari logika dasar pemrograman Python, meliputi variabel, alur kontrol, fungsi, dan debugging. Saya menghubungkan dasar-dasar tersebut dengan latihan Internet of Things (IoT) menggunakan Raspberry Pi, serta mendampingi mahasiswa saat menerapkan kode dan memperbaiki kesalahan. Melalui pendampingan praktikum dan penjelasan bertahap, saya membantu meningkatkan kepercayaan diri mahasiswa dalam pemrograman dan memperkuat dasar mereka untuk menyelesaikan masalah dengan kode.",
+					"Contributed to the development of two business websites: the Multyartha Indo Daya company profile and a marketing website for Technoflex Living Bandung apartment units. Worked across frontend and backend development to turn each website's goals into a cohesive online experience, with clear presentation of company and property information. This work supported the businesses' online presence and gave me experience adapting web solutions to different audiences and marketing needs.": "Saya berkontribusi mengembangkan dua situs bisnis: company profile Multyartha Indo Daya dan situs pemasaran unit apartemen Technoflex Living Bandung. Saya mengerjakan frontend dan backend untuk mewujudkan tujuan masing-masing situs dalam pengalaman online yang terpadu, dengan penyajian informasi perusahaan dan properti yang jelas. Pekerjaan ini mendukung kehadiran online bisnis sekaligus memberi saya pengalaman menyesuaikan solusi web untuk audiens dan kebutuhan pemasaran yang berbeda.",
+					"Industrial Pollution Monitoring Website": "Situs Pemantauan Pencemaran Industri",
+					"Developed an industrial pollution monitoring platform for Cimahi with a real-time dashboard, automated reporting, and data visualization features. The system helps environmental officers track industrial conditions, review monitoring results, and manage environmental information through a modern and accessible web interface. My responsibilities included designing the database, developing backend and frontend features, building dashboard visualizations, and supporting the reporting workflow so monitoring data could be reviewed and managed in one place.": "Saya mengembangkan platform pemantauan pencemaran industri di Cimahi dengan dasbor real-time, pelaporan otomatis, dan visualisasi data. Sistem ini membantu petugas lingkungan memantau kondisi industri, meninjau hasil pemantauan, dan mengelola informasi lingkungan melalui antarmuka web yang modern dan mudah diakses. Tanggung jawab saya mencakup merancang basis data, mengembangkan fitur backend dan frontend, membangun visualisasi dasbor, serta mendukung alur pelaporan agar data pemantauan dapat ditinjau dan dikelola dalam satu tempat.",
+					"DPPKB Bandung Government Website": "Situs Pemerintah DPPKB Bandung",
+					"Developed the official DPPKB Bandung government website to present institutional information, public services, announcements, and organizational activities. The project included building a user-friendly interface and a manageable content structure so administrators could maintain website information efficiently. I worked on the website's pages and content organization, translating the agency's information needs into an interface that makes public services and updates easier to find and maintain.": "Saya mengembangkan situs resmi pemerintah DPPKB Bandung untuk menyajikan informasi lembaga, layanan publik, pengumuman, dan kegiatan organisasi. Proyek ini mencakup pembuatan antarmuka yang mudah digunakan dan struktur konten yang mudah dikelola agar administrator dapat memperbarui informasi dengan efisien. Saya mengerjakan halaman situs dan penataan konten, menerjemahkan kebutuhan informasi dinas menjadi antarmuka yang memudahkan masyarakat menemukan layanan dan informasi terbaru.",
+					"ExamEdu Civil Service Exam Preparation Platform": "Platform Persiapan Ujian Aparatur Sipil Negara ExamEdu",
+					"Built ExamEdu as an online learning platform for civil service entrance exam preparation. The platform provides a question bank, exam simulations, learning progress tracking, and result analysis to help users practice effectively and understand their strengths and areas for improvement. My work covered developing the platform's learning flows and implementing these practice and progress features, including presenting results so users could identify topics that needed more attention.": "Saya membangun ExamEdu sebagai platform belajar online untuk persiapan ujian masuk aparatur sipil negara. Platform ini menyediakan bank soal, simulasi ujian, pelacakan progres belajar, dan analisis hasil agar pengguna dapat berlatih secara efektif serta mengetahui kelebihan dan hal yang perlu ditingkatkan. Pekerjaan saya mencakup pengembangan alur belajar dan implementasi fitur latihan serta progres, termasuk penyajian hasil agar pengguna dapat mengenali topik yang perlu dipelajari lebih lanjut.",
+					"ITENAS Campus Information System": "Sistem Informasi Kampus ITENAS",
+					"Developed a campus information system for ITENAS using Laravel and MySQL to publish campus news, events, announcements, and academic information. The project focused on creating a modern interface, organizing content clearly, and making important information easier for students, lecturers, and staff to access. I built the application interface and organized its information structure, connecting the Laravel application with MySQL so campus content could be presented and maintained consistently.": "Saya mengembangkan sistem informasi kampus ITENAS menggunakan Laravel dan MySQL untuk menerbitkan berita, acara, pengumuman, dan informasi akademik. Proyek ini berfokus pada antarmuka modern dan penataan konten yang jelas agar informasi penting mudah diakses mahasiswa, dosen, dan staf. Saya membangun antarmuka aplikasi dan menata struktur informasinya, serta menghubungkan aplikasi Laravel dengan MySQL agar konten kampus dapat disajikan dan dikelola secara konsisten.",
+					"Huma Consulting Driving License Test Module": "Modul Tes Surat Izin Mengemudi Huma Consulting",
+					"Enhanced the Huma Consulting website by adding a driving license test category and supporting content. The work included organizing the new test flow, adapting the interface to the existing website structure, and making the service easier for users to find and navigate. I was responsible for integrating the new category into the existing site, arranging its related information, and aligning the navigation and page layout with the website's established experience.": "Saya meningkatkan situs Huma Consulting dengan menambahkan kategori tes surat izin mengemudi beserta konten pendukung. Pekerjaan ini mencakup penataan alur tes, penyesuaian antarmuka dengan struktur situs yang ada, dan memudahkan pengguna menemukan serta menggunakan layanan tersebut. Saya bertanggung jawab mengintegrasikan kategori baru ke situs, menata informasi terkait, serta menyelaraskan navigasi dan tata letak dengan pengalaman situs yang sudah ada.",
+					"NodeMCU Smart Gate Prototype": "Prototipe Gerbang Pintar NodeMCU",
+					"Built a smart gate prototype using NodeMCU and C programming to simulate automated access control. The project involved connecting the microcontroller to the gate mechanism, implementing the control logic, and testing the prototype to demonstrate how embedded systems can automate entry and exit processes. My tasks included programming the NodeMCU, connecting it to the gate components, and testing the control behavior to check that the prototype responded as intended.": "Saya membuat prototipe gerbang pintar menggunakan NodeMCU dan bahasa C untuk menyimulasikan kontrol akses otomatis. Proyek ini mencakup menghubungkan mikrokontroler ke mekanisme gerbang, menerapkan logika kontrol, dan menguji prototipe untuk menunjukkan otomatisasi proses keluar-masuk dengan sistem embedded. Tugas saya meliputi memprogram NodeMCU, menghubungkannya ke komponen gerbang, dan menguji respons kontrol agar prototipe bekerja sesuai tujuan.",
+					"Sales and Inventory Management Application": "Aplikasi Pengelolaan Penjualan dan Inventaris",
+					"Created a GUI-based application for managing sales transactions and clothing store inventory. The application supports product data management, stock tracking, and transaction recording, helping store staff organize daily operations and reduce manual work. I developed the application's screens and core workflows for maintaining product records, updating stock, and recording sales, with the goal of making routine store tasks easier to manage.": "Saya membuat aplikasi berbasis GUI untuk mengelola transaksi penjualan dan inventaris toko pakaian. Aplikasi ini mendukung pengelolaan data produk, pemantauan stok, dan pencatatan transaksi sehingga staf dapat mengatur operasional harian dan mengurangi pekerjaan manual. Saya mengembangkan tampilan dan alur inti aplikasi untuk mengelola data produk, memperbarui stok, dan mencatat penjualan agar tugas rutin toko lebih mudah dilakukan.",
+					"Age Detection Through Facial Skin Analysis": "Deteksi Usia melalui Analisis Kulit Wajah",
+					"Developed a Python-based application for estimating age through facial skin analysis. The project applied image processing techniques to examine facial features and skin characteristics, covering data preparation, model experimentation, and result presentation for an introductory machine learning use case. My responsibilities included preparing the image data, implementing the analysis workflow, trying model approaches, and presenting the output so users could understand the estimate produced by the application.": "Saya mengembangkan aplikasi Python untuk memperkirakan usia melalui analisis kulit wajah. Proyek ini menerapkan pemrosesan citra untuk memeriksa fitur wajah dan karakteristik kulit, mencakup persiapan data, eksperimen model, dan penyajian hasil sebagai penerapan awal machine learning. Tanggung jawab saya meliputi menyiapkan data gambar, menerapkan alur analisis, mencoba pendekatan model, serta menyajikan hasil agar pengguna memahami perkiraan dari aplikasi.",
+					"Mathematics Educational Game - Unity": "Game Edukasi Matematika - Unity",
+					"Designed and developed an educational mathematics game in Unity for third-grade elementary school students. The game presents age-appropriate exercises through interactive challenges, helping children practice basic mathematical concepts while keeping the learning experience engaging and easy to follow. I planned and built the interactive exercises and game flow, adapting the challenges to the target students' level and making the learning activities straightforward to follow.": "Saya merancang dan mengembangkan game edukasi matematika dengan Unity untuk siswa kelas tiga sekolah dasar. Game ini menyajikan latihan sesuai usia melalui tantangan interaktif agar anak-anak dapat berlatih konsep matematika dasar dengan cara yang menarik dan mudah diikuti. Saya merancang dan membangun latihan interaktif serta alur permainan, menyesuaikan tantangan dengan tingkat kemampuan siswa.",
+					"Uang Kunci Savings Website": "Situs Tabungan Uang Kunci",
+					"Developed a digital savings website for Uang Kunci using Laravel and Vue.js, with payment integration through Midtrans. The project included building savings features, creating a clear user flow, managing transaction data, and connecting the application to a reliable online payment process. I worked across the frontend and backend to implement the savings and transaction flows, organize transaction data, and connect the user journey with Midtrans payment processing.": "Saya mengembangkan situs tabungan digital Uang Kunci menggunakan Laravel dan Vue.js, dengan integrasi pembayaran melalui Midtrans. Proyek ini mencakup pembuatan fitur tabungan, alur pengguna yang jelas, pengelolaan data transaksi, dan integrasi proses pembayaran online yang andal. Saya mengerjakan frontend dan backend untuk membangun alur tabungan dan transaksi, menata data transaksi, serta menghubungkan pengalaman pengguna dengan pemrosesan pembayaran Midtrans.",
+					"Healthcare Service Monitoring Dashboard": "Dasbor Pemantauan Layanan Kesehatan",
+					"Designed the system architecture and developed an integrated healthcare service monitoring dashboard with Python. The dashboard organizes service data, supports real-time monitoring, and presents key information through clear visual elements so users can review healthcare performance and identify operational conditions more efficiently. My contribution included planning how the system components and data fit together, implementing the dashboard, and presenting service indicators in visualizations that support monitoring and review.": "Saya merancang arsitektur sistem dan mengembangkan dasbor pemantauan layanan kesehatan terintegrasi menggunakan Python. Dasbor ini menata data layanan, mendukung pemantauan real-time, dan menyajikan informasi utama melalui visual yang jelas agar pengguna dapat meninjau kinerja layanan serta kondisi operasional dengan lebih efisien. Kontribusi saya mencakup perencanaan komponen dan data sistem, implementasi dasbor, serta penyajian indikator layanan dalam visualisasi untuk mendukung pemantauan dan peninjauan.",
+					"Indonesian Stock Exchange Support and Resistance Analysis": "Analisis Support dan Resistance Bursa Efek Indonesia",
+					"Analyzed Indonesian Stock Exchange market data to identify potential support and resistance levels. The project involved preparing historical price data, applying technical analysis methods, interpreting price movements, and presenting the findings to support a clearer understanding of market trends. I handled the data preparation and analysis, examined price movements to determine potential levels, and summarized the results so the observed trends were easier to review.": "Saya menganalisis data pasar Bursa Efek Indonesia untuk mengidentifikasi potensi level support dan resistance. Proyek ini mencakup persiapan data harga historis, penerapan metode analisis teknikal, interpretasi pergerakan harga, dan penyajian temuan untuk memahami tren pasar dengan lebih jelas. Saya menyiapkan dan menganalisis data, memeriksa pergerakan harga untuk menentukan level potensial, lalu merangkum hasil agar tren yang teramati lebih mudah ditinjau.",
+					"Details": "Detail",
+					"Database": "Basis Data",
+					"SQL Database Design and Development for Database Analysis": "Desain dan Pengembangan Basis Data SQL untuk Analisis Data",
+					"Issued by Data Academy": "Diterbitkan oleh Data Academy",
+					"November 1, 2022 - November 17, 2022": "1 November 2022 - 17 November 2022",
+					"Completed practical training in relational database design and SQL development for data analysis. The activities covered database planning, table relationships, normalization, query writing, data manipulation, and the use of SQL to retrieve meaningful information from structured datasets.": "Saya menyelesaikan pelatihan praktik desain basis data relasional dan pengembangan SQL untuk analisis data. Materi mencakup perencanaan basis data, relasi tabel, normalisasi, penulisan kueri, manipulasi data, serta penggunaan SQL untuk memperoleh informasi bermakna dari kumpulan data terstruktur.",
+					"Web Development": "Pengembangan Web",
+					"Website Development with WordPress and HTML for Internet Developers": "Pengembangan Situs Web dengan WordPress dan HTML untuk Pengembang Internet",
+					"Issued by Internasional Design School": "Diterbitkan oleh Internasional Design School",
+					"October 24, 2022 - November 2, 2022": "24 Oktober 2022 - 2 November 2022",
+					"Participated in practical website development training using WordPress and HTML. The activities included creating page structures, formatting content, arranging layouts, managing website components, and applying basic web development practices to produce functional and user-friendly pages.": "Saya mengikuti pelatihan praktik pengembangan situs web menggunakan WordPress dan HTML. Kegiatan mencakup pembuatan struktur halaman, pemformatan konten, penataan tata letak, pengelolaan komponen situs, serta penerapan dasar pengembangan web untuk menghasilkan halaman yang fungsional dan mudah digunakan.",
+					"Data Analytics": "Analisis Data",
+					"Data Analytics Mini Course": "Kursus Singkat Analisis Data",
+					"Issued by RevoU": "Diterbitkan oleh RevoU",
+					"October 24, 2022 - October 31, 2022": "24 Oktober 2022 - 31 Oktober 2022",
+					"Completed an introductory data analytics course covering data preparation, exploratory analysis, visualization, and the interpretation of analytical results. The activities focused on understanding datasets, identifying patterns, communicating insights, and using data to support practical decision-making.": "Saya menyelesaikan kursus pengantar analisis data yang mencakup persiapan data, analisis eksploratif, visualisasi, dan interpretasi hasil analisis. Kegiatan berfokus pada pemahaman kumpulan data, identifikasi pola, komunikasi wawasan, dan penggunaan data untuk mendukung pengambilan keputusan praktis.",
+					"Android Development": "Pengembangan Android",
+					"Android Application Development with Kotlin for Software Developers": "Pengembangan Aplikasi Android dengan Kotlin untuk Pengembang Perangkat Lunak",
+					"Issued by MyEduSolvex": "Diterbitkan oleh MyEduSolvex",
+					"November 24, 2022 - December 1, 2022": "24 November 2022 - 1 Desember 2022",
+					"Completed training in Android application development using Kotlin. The activities covered project setup, interface design, Kotlin programming fundamentals, event handling, application logic, and the development of a basic mobile application following software development practices.": "Saya menyelesaikan pelatihan pengembangan aplikasi Android menggunakan Kotlin. Materi mencakup penyiapan proyek, desain antarmuka, dasar pemrograman Kotlin, penanganan peristiwa, logika aplikasi, dan pembuatan aplikasi seluler dasar dengan praktik pengembangan perangkat lunak.",
+					"Python": "Python",
+					"Python Programming Basics Course": "Kursus Dasar Pemrograman Python",
+					"Issued by Huawei Academy": "Diterbitkan oleh Huawei Academy",
+					"November 28, 2023 - November 29, 2023": "28 November 2023 - 29 November 2023",
+					"Completed a foundational Python programming course covering variables, data types, operators, conditions, loops, functions, and basic problem-solving. The activities included writing and testing simple programs while building a structured understanding of Python syntax and programming logic.": "Saya menyelesaikan kursus dasar pemrograman Python yang mencakup variabel, tipe data, operator, kondisi, perulangan, fungsi, dan pemecahan masalah dasar. Kegiatannya meliputi penulisan dan pengujian program sederhana untuk membangun pemahaman terstruktur tentang sintaks Python dan logika pemrograman.",
+					"Java": "Java",
+					"Oracle Java Foundations": "Dasar-Dasar Java Oracle",
+					"Issued by Oracle Academy": "Diterbitkan oleh Oracle Academy",
+					"June 17, 2021": "17 Juni 2021",
+					"Completed Oracle Foundations training focused on the basic principles of Java programming and object-oriented development. The activities included learning Java syntax, working with variables and control flow, creating simple classes and methods, and practicing core programming concepts through guided exercises.": "Saya menyelesaikan pelatihan Oracle Foundations yang berfokus pada prinsip dasar pemrograman Java dan pengembangan berorientasi objek. Kegiatan mencakup sintaks Java, penggunaan variabel dan alur kontrol, pembuatan kelas dan metode sederhana, serta latihan konsep inti pemrograman dengan panduan.",
+					"Oracle Java Fundamentals": "Fundamental Java Oracle",
+					"January 4, 2021": "4 Januari 2021",
+					"Studied the fundamentals of Java programming through structured lessons and practical exercises. The activities covered programming structure, primitive data, operators, conditional statements, loops, methods, and introductory object-oriented programming techniques for building simple Java applications.": "Saya mempelajari dasar-dasar pemrograman Java melalui materi terstruktur dan latihan praktik. Kegiatan mencakup struktur program, tipe data primitif, operator, pernyataan kondisional, perulangan, metode, dan pengantar teknik pemrograman berorientasi objek untuk membangun aplikasi Java sederhana.",
+					"HTML": "HTML",
+					"Web Programming Fundamentals": "Dasar-Dasar Pemrograman Web",
+					"Issued by Dicoding": "Diterbitkan oleh Dicoding",
+					"February 5, 2021": "5 Februari 2021",
+					"Completed foundational web programming training focused on HTML, document structure, text formatting, links, images, and basic page layout. The activities involved building simple web pages and applying essential principles for creating organized, accessible, and functional website content.": "Saya menyelesaikan pelatihan dasar pemrograman web yang berfokus pada HTML, struktur dokumen, pemformatan teks, tautan, gambar, dan tata letak halaman dasar. Kegiatan mencakup pembuatan halaman web sederhana dan penerapan prinsip penting untuk menghasilkan konten situs yang teratur, mudah diakses, dan fungsional.",
+					"Laboratory Assistant": "Asisten Laboratorium",
+					"Database Programming Laboratory Assistant": "Asisten Laboratorium Pemrograman Basis Data",
+					"Issued by the Informatics Department, Faculty of Industrial Technology, ITENAS": "Diterbitkan oleh Jurusan Informatika, Fakultas Teknologi Industri, ITENAS",
+					"October 2024 - January 2025": "Oktober 2024 - Januari 2025",
+					"Supported database programming laboratory sessions by guiding students through entity relationship diagrams, table relationship diagrams, database design documentation, normalization, and SQL queries. Assisted students in understanding the exercises, troubleshooting their work, and applying database concepts in practical assignments.": "Saya mendukung sesi praktikum pemrograman basis data dengan membimbing mahasiswa memahami diagram relasi entitas, diagram relasi tabel, dokumentasi desain basis data, normalisasi, dan kueri SQL. Saya membantu mahasiswa memahami latihan, mengatasi kendala, dan menerapkan konsep basis data dalam tugas praktik.",
+					"September 2024 - January 2025": "September 2024 - Januari 2025",
+					"Guided students through basic programming logic using Python, including variables, data types, conditions, loops, functions, and debugging. Also supported laboratory activities involving Raspberry Pi and Internet of Things applications, helping students apply programming concepts to practical exercises.": "Saya membimbing mahasiswa memahami logika dasar pemrograman Python, termasuk variabel, tipe data, kondisi, perulangan, fungsi, dan debugging. Saya juga mendukung kegiatan laboratorium menggunakan Raspberry Pi dan aplikasi Internet of Things, membantu mahasiswa menerapkan konsep pemrograman dalam latihan praktik.",
+					"Internship": "Magang",
+					"Cimahi Environmental Agency Internship": "Magang di Dinas Lingkungan Hidup Cimahi",
+					"Issued by Dinas Lingkungan Hidup Cimahi": "Diterbitkan oleh Dinas Lingkungan Hidup Cimahi",
+					"October 2024 - February 2025": "Oktober 2024 - Februari 2025",
+					"Completed an internship at the Cimahi Environmental Agency and contributed to the development of an industrial pollution monitoring website. The activities included supporting database design, backend and frontend implementation, data management, interface development, testing, and the preparation of features for environmental monitoring needs.": "Saya menjalani magang di Dinas Lingkungan Hidup Cimahi dan berkontribusi dalam pengembangan situs pemantauan pencemaran industri. Kegiatan mencakup dukungan desain basis data, implementasi backend dan frontend, pengelolaan data, pengembangan antarmuka, pengujian, serta penyiapan fitur sesuai kebutuhan pemantauan lingkungan."
+				};
+				const toggle = document.getElementById('language-toggle');
+				const dropdown = document.getElementById('language-dropdown');
+				const currentLanguage = document.getElementById('current-language');
+				const options = document.querySelectorAll('.language-option');
+				const elements = document.querySelectorAll('[data-i18n]');
+				const englishText = new Map();
+				const contentTextNodes = [];
+				document.querySelectorAll('#experience, #projects, #certificate').forEach(function (section) {
+					const walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT);
+					let node;
+					while ((node = walker.nextNode())) {
+						if (
+							!node.nodeValue.trim()
+							|| node.parentElement.closest('[data-i18n], .owl-nav, .owl-dots')
+						) {
+							continue;
+						}
+						contentTextNodes.push({ node: node, english: node.nodeValue });
+					}
+				});
+
+				elements.forEach(function (element) {
+					englishText.set(element, element.textContent.trim());
+				});
+
+				contentTextNodes.forEach(function (entry) {
+					const text = entry.english.trim();
+					if (!Object.prototype.hasOwnProperty.call(contentTranslations, text)) {
+						throw new Error('Missing Indonesian translation for portfolio text: "' + text + '".');
+					}
+				});
+
+				function setLanguage(language) {
+					elements.forEach(function (element) {
+					const key = element.dataset.i18n;
+					if (language === 'id') {
+						if (!translations[key]) {
+							throw new Error('Missing Indonesian translation for "' + key + '".');
+						}
+						element.textContent = translations[key];
+					} else {
+						element.textContent = englishText.get(element);
+					}
+				});
+
+				contentTextNodes.forEach(function (entry) {
+					entry.node.nodeValue = language === 'id'
+						? contentTranslations[entry.english.trim()]
+						: entry.english;
+				});
+
+				document.documentElement.lang = language;
+				currentLanguage.textContent = language.toUpperCase();
+				toggle.setAttribute('aria-label', language === 'id' ? 'Pilih bahasa' : 'Choose language');
+				options.forEach(function (option) {
+					const selected = option.dataset.language === language;
+					option.classList.toggle('is-selected', selected);
+					option.setAttribute('aria-pressed', String(selected));
+				});
+			}
+
+			function closeDropdown() {
+				dropdown.hidden = true;
+				toggle.setAttribute('aria-expanded', 'false');
+			}
+
+			toggle.addEventListener('click', function () {
+				const open = dropdown.hidden;
+				dropdown.hidden = !open;
+				toggle.setAttribute('aria-expanded', String(open));
+			});
+
+			options.forEach(function (option) {
+				option.addEventListener('click', function () {
+					const language = option.dataset.language;
+					setLanguage(language);
+					try {
+						localStorage.setItem('portfolio-language', language);
+					} catch (error) {
+						console.warn('Unable to save the language preference.', error);
+					}
+					closeDropdown();
+				});
+			});
+
+			document.addEventListener('click', function (event) {
+				if (!event.target.closest('.language-switcher')) {
+					closeDropdown();
+				}
+			});
+
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape') {
+					closeDropdown();
+				}
+			});
+
+			let initialLanguage = 'en';
+			try {
+				const savedLanguage = localStorage.getItem('portfolio-language');
+				if (savedLanguage === 'id' || savedLanguage === 'en') {
+					initialLanguage = savedLanguage;
+				}
+			} catch (error) {
+				console.warn('Unable to read the saved language preference.', error);
+			}
+			setLanguage(initialLanguage);
+		})();
+
 		(function () {
 			const modal = document.getElementById('portfolio-detail-modal');
 			const modalContent = document.getElementById('portfolio-detail-content');
