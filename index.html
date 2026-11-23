@@ -142,6 +142,22 @@
 				margin-left: 14px;
 			}
 		}
+
+		.search-box-two.search-box-six.hero-actions {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 12px;
+		}
+
+		.search-box-two.search-box-six.hero-actions .search-btn {
+			float: none;
+		}
+
+		@media (max-width: 991.98px) {
+			.hero-actions {
+				justify-content: center;
+			}
+		}
 	</style>
 	
 </head>
@@ -265,8 +281,9 @@
 								<p data-i18n="hero.intro">Fresh graduate in Informatics with experience in full stack web development,
 								database management, and data analytics. Passionate about technology and continuously
 								learning to build meaningful digital experiences.</p>
-								<div class="search-box-two search-box-six">
+								<div class="search-box-two search-box-six hero-actions">
 									<a class="btn search-btn search_service" href="https://wa.me/+62895633996833" target="_blank" rel="noopener noreferrer" data-i18n="hero.contact">Contact Me</a>
+									<a class="btn search-btn search_service" id="download-cv" href="assets/CV-Ardi Fajar Maulana_Inggris.pdf" data-cv-en="assets/CV-Ardi Fajar Maulana_Inggris.pdf" data-cv-id="assets/CV-Ardi Fajar Maulana_Indonesia.pdf" data-i18n="hero.download" download>Download CV</a>
 								</div>
 							</div>
 						</div>
@@ -1415,6 +1432,7 @@
 				"hero.title": "Lulusan Informatika",
 				"hero.intro": "Lulusan Informatika dengan pengalaman dalam pengembangan web full stack, pengelolaan basis data, dan analisis data. Saya antusias dengan teknologi dan terus belajar untuk membangun pengalaman digital yang bermanfaat.",
 				"hero.contact": "Hubungi Saya",
+				"hero.download": "Unduh CV",
 				"section.about": "Tentang Saya",
 				"section.education": "Pendidikan",
 				"section.experience": "Pengalaman",
@@ -1539,6 +1557,7 @@
 				const toggle = document.getElementById('language-toggle');
 				const dropdown = document.getElementById('language-dropdown');
 				const currentLanguage = document.getElementById('current-language');
+				const downloadCv = document.getElementById('download-cv');
 				const options = document.querySelectorAll('.language-option');
 				const elements = document.querySelectorAll('[data-i18n]');
 				const englishText = new Map();
@@ -1588,6 +1607,7 @@
 				});
 
 				document.documentElement.lang = language;
+				downloadCv.href = language === 'id' ? downloadCv.dataset.cvId : downloadCv.dataset.cvEn;
 				currentLanguage.textContent = language.toUpperCase();
 				toggle.setAttribute('aria-label', language === 'id' ? 'Pilih bahasa' : 'Choose language');
 				options.forEach(function (option) {
